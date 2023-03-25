@@ -15,14 +15,17 @@ public class Chapter {
     @Column(name = "content",nullable = false)
     private String content;
 
+    private String image;
+
     public Chapter(){
 
     }
 
-    public Chapter(Long id, String name, String content){
+    public Chapter(Long id, String name, String content, String image){
         this.id = id;
         this.name = name;
         this.content = content;
+        this.image = image;
     }
 
     public Long getId() {
@@ -49,5 +52,11 @@ public class Chapter {
         this.content = content;
     }
 
+    public String getImage() {
+        return image;
+    }
 
+    public void setImage(String image) {
+        this.image = image;
+    }
 }
