@@ -8,18 +8,18 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/chapters")
+@RequestMapping("/api/chapters")
 public class ChapterController {
     @Autowired
     private ChaptersRepository chaptersRepository;
 
-    @GetMapping("/")
+    @GetMapping()
     public List<Chapter> getCapitole() {
         return chaptersRepository.findAll();
     }
 
-    @PostMapping("/")
-    public Chapter adaugaCapitol(@RequestBody Chapter chapter) {
-        return chaptersRepository.save(chapter);
-    }
+//    @PostMapping("/")
+//    public Chapter adaugaCapitol(@RequestBody Chapter chapter) {
+//        return chaptersRepository.save(chapter);
+//    }
 }
