@@ -12,8 +12,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     
-    //var users: [User] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -34,19 +32,5 @@ class ViewController: UIViewController {
         }
     }
    
-//    //metoda de inregistrare
-//    func register(username: String, password: String) -> Bool {
-//       return true
-//    }
-//
-//    //metoda de resetare a parolei
-//    func resetPassword(username: String, newPassword: String) -> Bool {
-//        return true
-//    }
-//
-//        //metoda de actualizare a informatiilor
-//    func updateProfile(username: String, password: String) -> Bool {
-//        return true
-//    }
 }
 

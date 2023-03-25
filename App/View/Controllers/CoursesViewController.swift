@@ -46,4 +46,8 @@ extension CoursesViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToChaptersSegue", sender: nil)
+    }
 }
