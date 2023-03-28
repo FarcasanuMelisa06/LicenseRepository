@@ -15,17 +15,23 @@ public class Chapter {
     @Column(name = "content",nullable = false)
     private String content;
 
+    @Column(name = "image",nullable = false)
     private String image;
+
+    @Column(name = "initialdescription",nullable = false)
+    private String initialdescription;
+
 
     public Chapter(){
 
     }
 
-    public Chapter(Long id, String name, String content, String image){
+    public Chapter(Long id, String name, String content, String image, String initialdescription){
         this.id = id;
         this.name = name;
         this.content = content;
         this.image = image;
+        this.initialdescription = initialdescription;
     }
 
     public Long getId() {
@@ -58,5 +64,13 @@ public class Chapter {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getInitialdescription() {
+        return initialdescription;
+    }
+
+    public void setInitialdescription(String initialdescription) {
+        this.initialdescription = initialdescription;
     }
 }
