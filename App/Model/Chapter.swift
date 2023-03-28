@@ -12,4 +12,5 @@ struct Chapter: Codable {
     var name: String
     var content: String
     var image: String
+    var initialdescription: String
 }

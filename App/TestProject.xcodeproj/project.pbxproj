@@ -10,6 +10,7 @@
 		837FAFC729CEEE1300251400 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 837FAFC629CEEE1300251400 /* SDWebImage */; };
 		837FAFC929CEEE1300251400 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 837FAFC829CEEE1300251400 /* SDWebImageMapKit */; };
 		837FAFCF29CEF81F00251400 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837FAFCE29CEF81F00251400 /* UICollectionViewExtension.swift */; };
+		837FAFD329CF32AF00251400 /* ContentChaptersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837FAFD229CF32AF00251400 /* ContentChaptersViewController.swift */; };
 		838622C129BB2D3500D7895B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838622C029BB2D3500D7895B /* AppDelegate.swift */; };
 		838622C329BB2D3500D7895B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838622C229BB2D3500D7895B /* SceneDelegate.swift */; };
 		838622C529BB2D3500D7895B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838622C429BB2D3500D7895B /* ViewController.swift */; };
@@ -34,6 +35,7 @@
 		83BCF34A29C31E5600F3AF01 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BCF34929C31E5600F3AF01 /* AppServices.swift */; };
 		83BCF35129C3444100F3AF01 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BCF35029C3444100F3AF01 /* CoursesViewController.swift */; };
 		83BCF35429C3454B00F3AF01 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BCF35329C3454B00F3AF01 /* CourseCell.swift */; };
+		83C5D18529D200F70097E56F /* ContentChapters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83C5D18429D200F70097E56F /* ContentChapters.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		837FAFCE29CEF81F00251400 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
+		837FAFD229CF32AF00251400 /* ContentChaptersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentChaptersViewController.swift; sourceTree = "<group>"; };
 		838622BD29BB2D3500D7895B /* TestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		838622C029BB2D3500D7895B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		838622C229BB2D3500D7895B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 		83BCF34929C31E5600F3AF01 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
 		83BCF35029C3444100F3AF01 /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
 		83BCF35329C3454B00F3AF01 /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
+		83C5D18429D200F70097E56F /* ContentChapters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContentChapters.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +182,7 @@
 				838622C629BB2D3500D7895B /* Main.storyboard */,
 				838622F129BB2ED200D7895B /* Courses.storyboard */,
 				8396F1A429C5F3EE004AA93A /* Chapters.storyboard */,
+				83C5D18429D200F70097E56F /* ContentChapters.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 				838622C429BB2D3500D7895B /* ViewController.swift */,
 				83BCF35029C3444100F3AF01 /* CoursesViewController.swift */,
 				8396F1A629C5F439004AA93A /* ChaptersViewController.swift */,
+				837FAFD229CF32AF00251400 /* ContentChaptersViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -372,6 +378,7 @@
 			files = (
 				838622CD29BB2D3700D7895B /* LaunchScreen.storyboard in Resources */,
 				838622CA29BB2D3700D7895B /* Assets.xcassets in Resources */,
+				83C5D18529D200F70097E56F /* ContentChapters.storyboard in Resources */,
 				8396F1A529C5F3EE004AA93A /* Chapters.storyboard in Resources */,
 				838622C829BB2D3500D7895B /* Main.storyboard in Resources */,
 				838622F229BB2ED200D7895B /* Courses.storyboard in Resources */,
@@ -413,6 +420,7 @@
 				83BCF33829C229BF00F3AF01 /* User.swift in Sources */,
 				83BCF34629C2323D00F3AF01 /* AppEndpoint.swift in Sources */,
 				83BCF35429C3454B00F3AF01 /* CourseCell.swift in Sources */,
+				837FAFD329CF32AF00251400 /* ContentChaptersViewController.swift in Sources */,
 				838622C329BB2D3500D7895B /* SceneDelegate.swift in Sources */,
 				83BCF33C29C22A9200F3AF01 /* Chapter.swift in Sources */,
 				83BCF34A29C31E5600F3AF01 /* AppServices.swift in Sources */,
