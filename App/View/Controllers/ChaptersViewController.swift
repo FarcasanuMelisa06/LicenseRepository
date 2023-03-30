@@ -10,17 +10,25 @@ import UIKit
 
 class ChaptersViewController: UIViewController {
 
-
-  
-    @IBAction func goToContent(_ sender: Any) {
-        performSegue(withIdentifier: "goToContentChapterSeque", sender: nil)
-    }
     @IBOutlet weak var tableView: UITableView!
     var chapters: [Chapter] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadChapters()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "goToContentChapterSegue":
+            
+            let controller = segue.destination as? ContentChaptersViewController
+            if let id = sender as? Int {
+                controller?.chapterTitle = chapters[id].name
+                controller?.chapterId = chapters[id].id
+            }
+            default: break
+        }
     }
     
     func loadChapters() {
@@ -32,7 +40,6 @@ class ChaptersViewController: UIViewController {
                 print("Capitolele au fost aduse cu succes \(response)")
                 chapters = response
                 tableView.reloadData()
-                
             case .failure(let error):
                 print("Eroare \(error)")
             }
@@ -50,6 +57,11 @@ extension ChaptersViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configure(title: chapters[indexPath.row].name, image: chapters[indexPath.row].image, initialdescription: chapters[indexPath.row].initialdescription)
             cell.layer.borderWidth = 1
             cell.layer.cornerRadius = 20
+            
+            cell.onPressReadMore = { [weak self] title in
+                self?.performSegue(withIdentifier: "goToContentChapterSegue", sender: indexPath.row)
+            }
+            
             return cell
         }
         return UITableViewCell()

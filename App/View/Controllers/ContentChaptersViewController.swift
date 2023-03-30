@@ -10,10 +10,35 @@ import UIKit
 
 class ContentChaptersViewController: UIViewController {
     
-   
+    @IBOutlet weak var chapterName: UILabel!
+    @IBOutlet weak var content: UILabel!
+    
+    var chapterTitle = ""
+    var chapter: Chapter?
+    var chapterId: Int?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        loadChaptersContent()
+        chapterName.text = chapterTitle
     }
+    
+    func loadChaptersContent() {
+        if let id = chapterId {
+            let service = AppService()
+            Task(priority: .background) {
+                let result = await service.getChapter(id: id)
+                switch result {
+                case .success(let response):
+                    print("Capitolul a fost adus cu succes \(response)")
+                    chapter = response
+                    content.text = response.content
+                case .failure(let error):
+                    print("Eroare \(error)")
+                }
+            }
+        }
+    }
+    
 }
 

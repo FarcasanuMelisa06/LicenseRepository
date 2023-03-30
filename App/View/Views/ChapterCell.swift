@@ -15,6 +15,8 @@ class ChapterCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var chapterImage: UIImageView!
     
+    var onPressReadMore: ((_ title: String) -> Void)? = nil
+    
     func configure(title: String, image: String, initialdescription: String) {
         self.title.text = title
         self.initialdescription.text = initialdescription
@@ -25,7 +27,10 @@ class ChapterCell: UITableViewCell {
         chapterImage.layer.borderWidth = 1
         chapterImage.clipsToBounds = true
         chapterImage.layer.cornerRadius = 20
-        
+    }
+    
+    @IBAction func readMore(_ sender: Any) {
+        onPressReadMore?(self.title.text ?? "")
     }
 }
 

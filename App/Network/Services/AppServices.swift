@@ -20,4 +20,8 @@ struct AppService: HTTPClient {
     func getChapters() async -> Result<[Chapter], RequestError> {
         return await sendRequest(endpoint: AppEndpoint.chapters, responseModel: [Chapter].self)
     }
+    
+    func getChapter(id: Int) async -> Result<Chapter, RequestError> {
+        return await sendRequest(endpoint: AppEndpoint.chapter(id: id), responseModel: Chapter.self)
+    }
 }

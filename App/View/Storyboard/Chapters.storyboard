@@ -41,7 +41,7 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFf-e7-LRV">
                                                     <rect key="frame" x="20" y="384" width="334" height="162.5"/>
-                                                    <mutableString key="text">Descrierea este un mod de expunere prin care se prezintă trăsăturile caracteristice ale unui colț din natură, ale unui peisaj, fenomen al naturii, portretul unui personaj etc. De asemenea, descrierea este și o operă literară, în proză sau în versuri, organizată pe baza descrierii literare. Ea poate fi:</mutableString>
+                                                    <string key="text">Descrierea este un mod de expunere prin care se prezintă trăsăturile caracteristice ale unui colț din natură, ale unui peisaj, fenomen al naturii, portretul unui personaj etc. De asemenea, descrierea este și o operă literară, în proză sau în versuri, organizată pe baza descrierii literare. Ea poate fi:</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -51,7 +51,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Read more"/>
                                                     <connections>
-                                                        <action selector="goToContent:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mB5-bA-tZ6"/>
+                                                        <action selector="readMore:" destination="nqS-K6-tdh" eventType="touchUpInside" id="06L-Nn-fBA"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -99,7 +99,7 @@
                     <navigationItem key="navigationItem" title="Capitole" id="d1q-tr-iBH"/>
                     <connections>
                         <outlet property="tableView" destination="qki-8D-KqV" id="sMs-M6-wi3"/>
-                        <segue destination="aKy-0E-4Am" kind="show" identifier="goToContentChapterSeque" id="oTY-ZK-hZy"/>
+                        <segue destination="aKy-0E-4Am" kind="show" identifier="goToContentChapterSegue" id="oTY-ZK-hZy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -124,6 +124,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WXC-2n-fjW">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="bfm-4J-N7h" id="vPB-Lg-pSR"/>
+                        </connections>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

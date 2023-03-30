@@ -11,6 +11,7 @@ enum AppEndpoint {
     case login(username: String, password: String)
     case courses
     case chapters
+    case chapter(id: Int)
 }
 
 extension AppEndpoint: Endpoint {
@@ -23,6 +24,8 @@ extension AppEndpoint: Endpoint {
             return "/api/courses"
         case .chapters:
             return "/api/chapters"
+        case .chapter(let id):
+            return "/api/chapters/\(id)"
         }
     }
 
@@ -30,7 +33,7 @@ extension AppEndpoint: Endpoint {
         switch self {
         case .login:
             return .post
-        case .courses, .chapters:
+        case .courses, .chapters, .chapter:
             return .get
         }
     }
@@ -41,7 +44,7 @@ extension AppEndpoint: Endpoint {
             return ["username": "\(username)",
                     "password": "\(password)"
             ]
-        case .courses, .chapters:
+        case .courses, .chapters, .chapter:
             return nil
         }
     }
