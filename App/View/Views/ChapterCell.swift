@@ -25,7 +25,6 @@ class ChapterCell: UITableViewCell {
         }
        
         chapterImage.layer.borderWidth = 1
-        chapterImage.clipsToBounds = true
         chapterImage.layer.cornerRadius = 20
     }
     

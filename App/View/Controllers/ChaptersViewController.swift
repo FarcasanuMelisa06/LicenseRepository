@@ -55,8 +55,9 @@ extension ChaptersViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell  = tableView.dequeueReusableCell(withIdentifier: "ChapterCell", for: indexPath) as? ChapterCell {
             cell.configure(title: chapters[indexPath.row].name, image: chapters[indexPath.row].image, initialdescription: chapters[indexPath.row].initialdescription)
-            cell.layer.borderWidth = 1
+            cell.layer.borderWidth = 3
             cell.layer.cornerRadius = 20
+           
             
             cell.onPressReadMore = { [weak self] title in
                 self?.performSegue(withIdentifier: "goToContentChapterSegue", sender: indexPath.row)

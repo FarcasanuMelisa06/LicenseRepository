@@ -12,9 +12,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     
+    @IBOutlet weak var register: UIButton!
+    @IBOutlet weak var login: UIButton!
+    @IBOutlet weak var nameApp: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        //txtUsername.layer.borderWidth = 1
+        txtUsername.layer.cornerRadius = 40
+        txtPassword.layer.cornerRadius = 100
+        
+        login.layer.cornerRadius = 20
+        register.layer.cornerRadius = 20
+        
+        
     }
 
     @IBAction func btnLogin(_ sender: Any) {

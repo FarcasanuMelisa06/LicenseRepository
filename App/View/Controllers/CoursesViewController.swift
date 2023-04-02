@@ -17,6 +17,8 @@ class CoursesViewController: UIViewController {
         super.viewDidLoad()
         loadCourses()
     }
+
+
     
     func loadCourses() {
         let service = AppService()
@@ -42,10 +44,15 @@ extension CoursesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell  = tableView.dequeueReusableCell(withIdentifier: "CourseCell", for: indexPath) as? CourseCell {
             cell.configure(title: courses[indexPath.row].name)
+            
+                   cell.layer.borderWidth = 1
+                   cell.layer.cornerRadius = 25
+
             return cell
         }
         return UITableViewCell()
     }
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "goToChaptersSegue", sender: nil)
