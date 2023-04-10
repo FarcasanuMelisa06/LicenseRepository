@@ -13,12 +13,14 @@ class CoursesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var courses: [Course] = []
     
+    @IBAction func settings(_ sender: Any) {
+        performSegue(withIdentifier: "goToSettingsSeque", sender: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCourses()
     }
-
-
     
     func loadCourses() {
         let service = AppService()
@@ -43,7 +45,8 @@ extension CoursesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell  = tableView.dequeueReusableCell(withIdentifier: "CourseCell", for: indexPath) as? CourseCell {
-            cell.configure(title: courses[indexPath.row].name)
+            
+            cell.configure(title: courses[indexPath.row].nameEn)
             
                    cell.layer.borderWidth = 1
                    cell.layer.cornerRadius = 25
@@ -55,6 +58,7 @@ extension CoursesViewController: UITableViewDelegate, UITableViewDataSource {
 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "goToChaptersSegue", sender: nil)
+   performSegue(withIdentifier: "goToChaptersSegue", sender: nil)
+        
     }
 }

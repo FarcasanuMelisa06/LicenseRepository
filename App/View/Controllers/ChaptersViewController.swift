@@ -12,6 +12,9 @@ class ChaptersViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var chapters: [Chapter] = []
+    @IBAction func settings(_ sender: Any) {
+        performSegue(withIdentifier: "goToSettingsSeque", sender: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +27,7 @@ class ChaptersViewController: UIViewController {
             
             let controller = segue.destination as? ContentChaptersViewController
             if let id = sender as? Int {
-                controller?.chapterTitle = chapters[id].name
+               controller?.chapterTitle = chapters[id].nameEn
                 controller?.chapterId = chapters[id].id
             }
             default: break
@@ -54,7 +57,7 @@ extension ChaptersViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell  = tableView.dequeueReusableCell(withIdentifier: "ChapterCell", for: indexPath) as? ChapterCell {
-            cell.configure(title: chapters[indexPath.row].name, image: chapters[indexPath.row].image, initialdescription: chapters[indexPath.row].initialdescription)
+            cell.configure(title: chapters[indexPath.row].nameEn, image: chapters[indexPath.row].image, initialdescription: chapters[indexPath.row].initialdescriptionEn)
             cell.layer.borderWidth = 3
             cell.layer.cornerRadius = 20
            

@@ -9,8 +9,8 @@ import Foundation
 
 struct Chapter: Codable {
     var id: Int
-    var name: String
-    var content: String
+    var nameEn: String
+    var contentEn: String
     var image: String
-    var initialdescription: String
+    var initialdescriptionEn: String
 }

@@ -17,12 +17,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKp-OC-5RS">
-                                <rect key="frame" x="0.0" y="85" width="414" height="777"/>
+                                <rect key="frame" x="0.0" y="85" width="414" height="728"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AvE-4t-cO9" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="61.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Content" lineBreakMode="tailTruncation" numberOfLines="206" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cA-ma-zAr">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Content" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="206" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cA-ma-zAr">
                                                 <rect key="frame" x="20" y="40" width="374" height="21.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" name="YaleBlue"/>
@@ -66,19 +66,38 @@
                             <constraint firstItem="AvE-4t-cO9" firstAttribute="width" secondItem="jRf-Cq-eYl" secondAttribute="width" id="nua-b6-gbd"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" image="gearshape.fill" catalog="system" id="MZ2-bO-K43">
+                            <color key="tintColor" name="PinkColor"/>
+                            <connections>
+                                <action selector="settings:" destination="Q1r-Xj-KNu" id="lm8-WF-kQa"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="chapterName" destination="9T9-KN-lad" id="rxb-bc-uXA"/>
                         <outlet property="content" destination="4cA-ma-zAr" id="ECr-ZF-ILj"/>
+                        <segue destination="46v-dx-rv8" kind="presentation" identifier="goToSettingsSeque" id="AeB-kc-Jov"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3l-TE-oyg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1178.2608695652175" y="7.3660714285714279"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="KGp-yX-Ehk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="46v-dx-rv8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tut-D7-yT5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1758" y="-24"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <namedColor name="PinkColor">
-            <color red="1" green="0.3529411764705882" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.3529999852180481" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="YaleBlue">
             <color red="0.050999999046325684" green="0.23100000619888306" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

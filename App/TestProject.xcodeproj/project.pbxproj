@@ -11,6 +11,8 @@
 		837FAFC929CEEE1300251400 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 837FAFC829CEEE1300251400 /* SDWebImageMapKit */; };
 		837FAFCF29CEF81F00251400 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837FAFCE29CEF81F00251400 /* UICollectionViewExtension.swift */; };
 		837FAFD329CF32AF00251400 /* ContentChaptersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837FAFD229CF32AF00251400 /* ContentChaptersViewController.swift */; };
+		8381983B29DE990E00C5F8B2 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8381983A29DE990E00C5F8B2 /* Settings.storyboard */; };
+		8381983D29DE993A00C5F8B2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381983C29DE993A00C5F8B2 /* SettingsViewController.swift */; };
 		838622C129BB2D3500D7895B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838622C029BB2D3500D7895B /* AppDelegate.swift */; };
 		838622C329BB2D3500D7895B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838622C229BB2D3500D7895B /* SceneDelegate.swift */; };
 		838622C529BB2D3500D7895B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838622C429BB2D3500D7895B /* ViewController.swift */; };
@@ -59,6 +61,8 @@
 /* Begin PBXFileReference section */
 		837FAFCE29CEF81F00251400 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 		837FAFD229CF32AF00251400 /* ContentChaptersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentChaptersViewController.swift; sourceTree = "<group>"; };
+		8381983A29DE990E00C5F8B2 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		8381983C29DE993A00C5F8B2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		838622BD29BB2D3500D7895B /* TestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		838622C029BB2D3500D7895B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		838622C229BB2D3500D7895B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 				838622F129BB2ED200D7895B /* Courses.storyboard */,
 				8396F1A429C5F3EE004AA93A /* Chapters.storyboard */,
 				83C5D18429D200F70097E56F /* ContentChapters.storyboard */,
+				8381983A29DE990E00C5F8B2 /* Settings.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 				83BCF35029C3444100F3AF01 /* CoursesViewController.swift */,
 				8396F1A629C5F439004AA93A /* ChaptersViewController.swift */,
 				837FAFD229CF32AF00251400 /* ContentChaptersViewController.swift */,
+				8381983C29DE993A00C5F8B2 /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -385,6 +391,7 @@
 				8396F1A529C5F3EE004AA93A /* Chapters.storyboard in Resources */,
 				838622C829BB2D3500D7895B /* Main.storyboard in Resources */,
 				838622F229BB2ED200D7895B /* Courses.storyboard in Resources */,
+				8381983B29DE990E00C5F8B2 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +419,7 @@
 				83BCF33A29C22A8600F3AF01 /* Course.swift in Sources */,
 				8396F1A729C5F439004AA93A /* ChaptersViewController.swift in Sources */,
 				83BCF35129C3444100F3AF01 /* CoursesViewController.swift in Sources */,
+				8381983D29DE993A00C5F8B2 /* SettingsViewController.swift in Sources */,
 				8396F1A929C5F7AA004AA93A /* ChapterCell.swift in Sources */,
 				83BCF33E29C22D3300F3AF01 /* Endpoint.swift in Sources */,
 				83BCF34429C2300C00F3AF01 /* HTTPMethod.swift in Sources */,

@@ -13,6 +13,10 @@ class ContentChaptersViewController: UIViewController {
     @IBOutlet weak var chapterName: UILabel!
     @IBOutlet weak var content: UILabel!
     
+    @IBAction func settings(_ sender: Any) {
+        performSegue(withIdentifier: "goToSettingsSeque", sender: nil)
+    }
+    
     var chapterTitle = ""
     var chapter: Chapter?
     var chapterId: Int?
@@ -32,7 +36,7 @@ class ContentChaptersViewController: UIViewController {
                 case .success(let response):
                     print("Capitolul a fost adus cu succes \(response)")
                     chapter = response
-                    content.text = response.content
+                    content.text = response.contentEn
                 case .failure(let error):
                     print("Eroare \(error)")
                 }
