@@ -19,6 +19,7 @@ public class ChapterController {
     public List<Chapter> getCapitole() {
         return chaptersRepository.findAll();
     }
+
     @GetMapping("/{id}")
     public ResponseEntity<Chapter> getChapterById(@PathVariable Long id) {
         Optional<Chapter> chapterOptional = chaptersRepository.findById(id);

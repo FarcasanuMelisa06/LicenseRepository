@@ -9,29 +9,42 @@ public class Chapter {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name", nullable = false)
-    private String name;
+    @Column(name = "namero", nullable = false)
+    private String nameRo;
 
-    @Column(name = "content",nullable = false)
-    private String content;
+    @Column(name = "nameen", nullable = false)
+    private String nameEn;
+
+    @Column(name = "contentro",nullable = false)
+    private String contentRo;
+
+    @Column(name = "contenten",nullable = false)
+    private String contentEn;
 
     @Column(name = "image",nullable = false)
     private String image;
 
-    @Column(name = "initialdescription",nullable = false)
-    private String initialdescription;
+    @Column(name = "initialdescriptionro",nullable = false)
+    private String initialdescriptionRo;
 
+    @Column(name = "initialdescriptionen",nullable = false)
+    private String initialdescriptionEn;
 
     public Chapter(){
 
     }
 
-    public Chapter(Long id, String name, String content, String image, String initialdescription){
+    public Chapter(Long id, String nameRo,String nameEn,
+                   String contentRo,String contentEn,
+                   String image, String initialdescriptionRo, String initialdescriptionEn){
         this.id = id;
-        this.name = name;
-        this.content = content;
+        this.nameRo = nameRo;
+        this.nameEn = nameEn;
+        this.contentRo = contentRo;
+        this.contentEn = contentEn;
         this.image = image;
-        this.initialdescription = initialdescription;
+        this.initialdescriptionRo = initialdescriptionRo;
+        this.initialdescriptionEn = initialdescriptionEn;
     }
 
     public Long getId() {
@@ -42,20 +55,36 @@ public class Chapter {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNameRo() {
+        return nameRo;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameRo(String nameRo) {
+        this.nameRo = nameRo;
     }
 
-    public String getContent() {
-        return content;
+    public String getNameEn() {
+        return nameEn;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setNameEn(String nameEn) {
+        this.nameEn = nameEn;
+    }
+
+    public String getContentRo() {
+        return contentRo;
+    }
+
+    public void setContentRo(String contentRo) {
+        this.contentRo = contentRo;
+    }
+
+    public String getContentEn() {
+        return contentEn;
+    }
+
+    public void setContentEn(String contentEn) {
+        this.contentEn = contentEn;
     }
 
     public String getImage() {
@@ -66,11 +95,18 @@ public class Chapter {
         this.image = image;
     }
 
-    public String getInitialdescription() {
-        return initialdescription;
+    public String getInitialdescriptionRo() {
+        return initialdescriptionRo;
     }
 
-    public void setInitialdescription(String initialdescription) {
-        this.initialdescription = initialdescription;
+    public void setInitialdescriptionRo(String initialdescription) {
+        this.initialdescriptionRo = initialdescriptionRo;
+    }
+
+    public String getInitialdescriptionEn() {
+        return initialdescriptionEn;
+    }
+    public void setInitialdescriptionEn(String initialdescriptionEn) {
+        this.initialdescriptionEn = initialdescriptionEn;
     }
 }

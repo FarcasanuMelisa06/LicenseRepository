@@ -12,16 +12,20 @@ public class Course {
     @Column(name = "id", nullable = false, unique = true)
     private Long id;
 
-    @Column(name = "name", nullable = false)
-    private String name;
+    @Column(name = "namero", nullable = false)
+    private String nameRo;
+
+    @Column(name = "nameen", nullable = false)
+    private String nameEn;
 
     public Course(){
 
     }
 
-    public Course(Long id, String name){
+    public Course(Long id, String nameRo, String nameEn){
         this.id = id;
-        this.name = name;
+        this.nameRo = nameRo;
+        this.nameEn = nameEn;
     }
 
     public Long getId() {
@@ -32,11 +36,18 @@ public class Course {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNameRo() {
+        return nameRo;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameRo(String nameRo) {
+        this.nameRo = nameRo;
+    }
+
+    public String getNameEn() {
+        return nameEn;
+    }
+    public void setNameEn(String nameEn) {
+        this.nameEn = nameEn;
     }
 }

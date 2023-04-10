@@ -15,12 +15,16 @@ public class CourseController {
     @Autowired
     private CourseRepository courseRepository;
 
-    //obtinerea tuturor cursurilor din baza de date
+   // obtinerea tuturor cursurilor din baza de date
     @GetMapping
     public ResponseEntity<List<Course>> getAllCourses() {
         List<Course> courses = courseRepository.findAll();
         return ResponseEntity.ok(courses);
     }
+//    @GetMapping
+//    public List<Course> getAllCourses() {
+//       return courseRepository.findAll();
+//    }
 
 //   //metoda de adaugare curs in baza de date
 //    @PostMapping("/add")
