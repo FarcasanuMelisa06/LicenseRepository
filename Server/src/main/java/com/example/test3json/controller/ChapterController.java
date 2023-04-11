@@ -20,15 +20,34 @@ public class ChapterController {
         return chaptersRepository.findAll();
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Chapter> getChapterById(@PathVariable Long id) {
-        Optional<Chapter> chapterOptional = chaptersRepository.findById(id);
-        if (chapterOptional.isPresent()) {
-            return ResponseEntity.ok(chapterOptional.get());
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+//    @GetMapping("/{id}/en")
+//    public ResponseEntity<Chapter> getChapterById(@PathVariable Long id) {
+//        Optional<Chapter> chapterOptional = chaptersRepository.findById(id);
+//        if (chapterOptional.isPresent()) {
+//            return ResponseEntity.ok(chapterOptional.get());
+//        } else {
+//            return ResponseEntity.notFound().build();
+//        }
+//    }
+
+    @GetMapping("/en")
+    public List<Chapter> getAllChaptersWithEnglishName() {
+        return chaptersRepository.findAllChaptersWithEnglishName();
     }
 
+    @GetMapping("/ro")
+    public List<Chapter> getAllChaptersWithRomanianName() {
+        return chaptersRepository.findAllChaptersWithRomanianName();
+    }
+
+    @GetMapping("/{id}/ro")
+    public Chapter getChapterByIdRo(@PathVariable Long id) {
+        return chaptersRepository.findChapterByIdWithSelectedFieldsRo(id);
+    }
+
+    @GetMapping("/{id}/en")
+    public Chapter getChapterByIdEn(@PathVariable Long id) {
+        return chaptersRepository.findChapterByIdWithSelectedFieldsEn(id);
+    }
 
 }

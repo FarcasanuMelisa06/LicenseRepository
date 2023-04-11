@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,10 +22,16 @@ public class CourseController {
         List<Course> courses = courseRepository.findAll();
         return ResponseEntity.ok(courses);
     }
-//    @GetMapping
-//    public List<Course> getAllCourses() {
-//       return courseRepository.findAll();
-//    }
+
+    @GetMapping("/en")
+    public List<Course> getAllCoursesWithEnglishName() {
+        return courseRepository.findAllCoursesWithEnglishName();
+    }
+    @GetMapping("/ro")
+    public List<Course> getAllCoursesWithRomanianName() {
+        return courseRepository.findAllCoursesWithRomanianName();
+    }
+
 
 //   //metoda de adaugare curs in baza de date
 //    @PostMapping("/add")

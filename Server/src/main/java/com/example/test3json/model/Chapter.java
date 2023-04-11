@@ -9,14 +9,14 @@ public class Chapter {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "namero", nullable = false)
-    private String nameRo;
+    @Column(name = "name", nullable = false)
+    private String name;
 
     @Column(name = "nameen", nullable = false)
     private String nameEn;
 
-    @Column(name = "contentro",nullable = false)
-    private String contentRo;
+    @Column(name = "content",nullable = false)
+    private String content;
 
     @Column(name = "contenten",nullable = false)
     private String contentEn;
@@ -24,8 +24,8 @@ public class Chapter {
     @Column(name = "image",nullable = false)
     private String image;
 
-    @Column(name = "initialdescriptionro",nullable = false)
-    private String initialdescriptionRo;
+    @Column(name = "initialdescription",nullable = false)
+    private String initialdescription;
 
     @Column(name = "initialdescriptionen",nullable = false)
     private String initialdescriptionEn;
@@ -34,17 +34,32 @@ public class Chapter {
 
     }
 
-    public Chapter(Long id, String nameRo,String nameEn,
-                   String contentRo,String contentEn,
-                   String image, String initialdescriptionRo, String initialdescriptionEn){
+//    public Chapter(Long id, String nameRo,String nameEn,
+//                   String contentRo,String contentEn,
+//                   String image, String initialdescriptionRo, String initialdescriptionEn){
+//        this.id = id;
+//        this.nameRo = nameRo;
+//        this.nameEn = nameEn;
+//        this.contentRo = contentRo;
+//        this.contentEn = contentEn;
+//        this.image = image;
+//        this.initialdescriptionRo = initialdescriptionRo;
+//        this.initialdescriptionEn = initialdescriptionEn;
+//    }
+
+//    public Chapter(Long id, String nameEn, String contentEn, String initialdescriptionEn, String image){
+//        this.id = id;
+//        this.nameEn = nameEn;
+//        this.contentEn = contentEn;
+//        this.initialdescriptionEn = initialdescriptionEn;
+//        this.image = image;
+//    }
+    public Chapter(Long id,String name, String content, String initialdescription, String image){
         this.id = id;
-        this.nameRo = nameRo;
-        this.nameEn = nameEn;
-        this.contentRo = contentRo;
-        this.contentEn = contentEn;
+        this.name = name;
+        this.content = content;
+        this.initialdescription = initialdescription;
         this.image = image;
-        this.initialdescriptionRo = initialdescriptionRo;
-        this.initialdescriptionEn = initialdescriptionEn;
     }
 
     public Long getId() {
@@ -55,12 +70,12 @@ public class Chapter {
         this.id = id;
     }
 
-    public String getNameRo() {
-        return nameRo;
+    public String getName() {
+        return name;
     }
 
-    public void setNameRo(String nameRo) {
-        this.nameRo = nameRo;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getNameEn() {
@@ -71,12 +86,12 @@ public class Chapter {
         this.nameEn = nameEn;
     }
 
-    public String getContentRo() {
-        return contentRo;
+    public String getContent() {
+        return content;
     }
 
-    public void setContentRo(String contentRo) {
-        this.contentRo = contentRo;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public String getContentEn() {
@@ -95,12 +110,12 @@ public class Chapter {
         this.image = image;
     }
 
-    public String getInitialdescriptionRo() {
-        return initialdescriptionRo;
+    public String getInitialdescription() {
+        return initialdescription;
     }
 
-    public void setInitialdescriptionRo(String initialdescription) {
-        this.initialdescriptionRo = initialdescriptionRo;
+    public void setInitialdescription(String initialdescription) {
+        this.initialdescription = initialdescription;
     }
 
     public String getInitialdescriptionEn() {

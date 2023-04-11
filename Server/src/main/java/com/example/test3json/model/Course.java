@@ -12,8 +12,8 @@ public class Course {
     @Column(name = "id", nullable = false, unique = true)
     private Long id;
 
-    @Column(name = "namero", nullable = false)
-    private String nameRo;
+    @Column(name = "name", nullable = false)
+    private String name;
 
     @Column(name = "nameen", nullable = false)
     private String nameEn;
@@ -21,12 +21,21 @@ public class Course {
     public Course(){
 
     }
+//    public Course(Long id, String nameEn) {
+//        this.id = id;
+//        this.nameEn = nameEn;
+//    }
 
-    public Course(Long id, String nameRo, String nameEn){
+    public Course(Long id, String name) {
         this.id = id;
-        this.nameRo = nameRo;
-        this.nameEn = nameEn;
+        this.name = name;
     }
+
+//    public Course(Long id, String nameRo, String nameEn){
+//        this.id = id;
+//        this.nameRo = nameRo;
+//        this.nameEn = nameEn;
+//    }
 
     public Long getId() {
         return id;
@@ -36,12 +45,12 @@ public class Course {
         this.id = id;
     }
 
-    public String getNameRo() {
-        return nameRo;
+    public String getName() {
+        return name;
     }
 
-    public void setNameRo(String nameRo) {
-        this.nameRo = nameRo;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getNameEn() {
