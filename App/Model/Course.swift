@@ -9,5 +9,5 @@ import Foundation
 
 struct Course: Codable {
     var id: Int
-    var nameEn: String
+    var name: String
 }

@@ -46,7 +46,7 @@ extension CoursesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell  = tableView.dequeueReusableCell(withIdentifier: "CourseCell", for: indexPath) as? CourseCell {
             
-            cell.configure(title: courses[indexPath.row].nameEn)
+            cell.configure(title: courses[indexPath.row].name)
             
                    cell.layer.borderWidth = 1
                    cell.layer.cornerRadius = 25

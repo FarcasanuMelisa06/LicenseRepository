@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Endpoint {
+protocol Endpoint: ManagerInjector {
     var scheme: String { get }
     var host: String { get }
     var path: String { get }
@@ -15,6 +15,7 @@ protocol Endpoint {
     var header: [String: String]? { get }
     var body: [String: Any]? { get }
     var port: Int? { get }
+    var languagePath: String { get }
 }
 
 extension Endpoint {
@@ -25,11 +26,16 @@ extension Endpoint {
     var header: [String: String]? {
         return ["Content-Type": "application/json"]
     }
+    
     var host: String {
         return "localhost"
     }
     
     var port: Int? {
         return 8080
+    }
+    
+    var languagePath: String {
+        return manager.language ?? AppLanguage.romanian.rawValue
     }
 }

@@ -13,11 +13,11 @@ class ContentChapterCell: UITableViewCell {
 
 
     @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var contentRo: UILabel!
+    @IBOutlet weak var content: UILabel!
     
-    func configure(title: String, contentRo: String) {
+    func configure(title: String, content: String) {
         self.title.text = title
-        self.contentRo.text = contentRo
+        self.content.text = content
     }
     
 }

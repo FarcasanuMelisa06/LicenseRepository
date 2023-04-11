@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ManagerInjector {
 
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         login.layer.cornerRadius = 20
         register.layer.cornerRadius = 20
         
-        
+        initLanguage()
     }
 
     @IBAction func btnLogin(_ sender: Any) {
@@ -44,6 +44,12 @@ class ViewController: UIViewController {
             }
         }
     }
-   
+    
+    private func initLanguage() {
+        guard let _ = manager.language else {
+            manager.language = AppLanguage.romanian.rawValue
+            return
+        }
+    }
 }
 

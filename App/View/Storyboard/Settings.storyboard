@@ -34,23 +34,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Romanian" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVd-JF-AMJ">
-                                <rect key="frame" x="20" y="396" width="374" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPZ-dG-jNY">
                                 <rect key="frame" x="20" y="463" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Mpi-EF-Oa3">
-                                <rect key="frame" x="309" y="396" width="49" height="31"/>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Klq-Cr-aCl">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Klq-Cr-aCl">
                                 <rect key="frame" x="309" y="453" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchLanguage:" destination="Y6W-OH-hqX" eventType="valueChanged" id="QZF-KR-FuW"/>
+                                </connections>
                             </switch>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLA-Sy-d1i">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -66,16 +60,9 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="rVd-JF-AMJ" secondAttribute="bottom" constant="445" id="0H7-wY-ExK"/>
-                            <constraint firstItem="Mpi-EF-Oa3" firstAttribute="top" secondItem="Yq7-Co-HEW" secondAttribute="bottom" constant="62" id="0LI-eP-QU7"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rVd-JF-AMJ" secondAttribute="trailing" constant="20" id="18j-5D-dHI"/>
-                            <constraint firstItem="Klq-Cr-aCl" firstAttribute="top" secondItem="Mpi-EF-Oa3" secondAttribute="bottom" constant="26" id="2rT-tr-4kX"/>
-                            <constraint firstItem="KPZ-dG-jNY" firstAttribute="top" secondItem="rVd-JF-AMJ" secondAttribute="bottom" constant="46" id="5cl-aS-dts"/>
-                            <constraint firstItem="rVd-JF-AMJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Arh-QT-XBc"/>
                             <constraint firstItem="D1S-K9-JyA" firstAttribute="top" secondItem="7uk-4f-9XX" secondAttribute="bottom" constant="50" id="B9n-YX-cns"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Klq-Cr-aCl" secondAttribute="bottom" constant="378" id="Cqp-fz-eXX"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Klq-Cr-aCl" secondAttribute="trailing" constant="56" id="Itt-ZY-cX6"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Mpi-EF-Oa3" secondAttribute="trailing" constant="58" id="MCV-jc-URd"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="KPZ-dG-jNY" secondAttribute="bottom" constant="378" id="MLc-ad-mqv"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="D1S-K9-JyA" secondAttribute="trailing" constant="20" id="PiC-os-OMo"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Yq7-Co-HEW" secondAttribute="bottom" constant="528" id="Q6w-X2-R4Q"/>
@@ -83,7 +70,6 @@
                             <constraint firstItem="D1S-K9-JyA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Sgg-sF-9Na"/>
                             <constraint firstItem="Yq7-Co-HEW" firstAttribute="top" secondItem="D1S-K9-JyA" secondAttribute="bottom" constant="49" id="TEQ-eC-y0a"/>
                             <constraint firstItem="KPZ-dG-jNY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Ve1-P8-m7H"/>
-                            <constraint firstItem="Mpi-EF-Oa3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="309" id="WQQ-pq-IWK"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Yq7-Co-HEW" secondAttribute="trailing" id="aeX-rV-YzZ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="7uk-4f-9XX" secondAttribute="bottom" constant="669" id="gCA-sI-egM"/>
                             <constraint firstItem="7uk-4f-9XX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="kFx-Iy-Szd"/>
@@ -91,11 +77,12 @@
                             <constraint firstItem="Yq7-Co-HEW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="swf-zP-1k1"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="D1S-K9-JyA" secondAttribute="bottom" constant="598" id="tqr-Ul-7mL"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7uk-4f-9XX" secondAttribute="trailing" constant="20" id="xhg-Om-9cV"/>
-                            <constraint firstItem="rVd-JF-AMJ" firstAttribute="top" secondItem="Yq7-Co-HEW" secondAttribute="bottom" constant="62" id="yqN-2W-fQ2"/>
-                            <constraint firstItem="Klq-Cr-aCl" firstAttribute="top" secondItem="Mpi-EF-Oa3" secondAttribute="bottom" constant="26" id="zlv-Nk-o8B"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="languageSwitch" destination="Klq-Cr-aCl" id="eR2-Kg-1mT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -36,7 +36,7 @@ class ContentChaptersViewController: UIViewController {
                 case .success(let response):
                     print("Capitolul a fost adus cu succes \(response)")
                     chapter = response
-                    content.text = response.contentEn
+                    content.text = response.content
                 case .failure(let error):
                     print("Eroare \(error)")
                 }

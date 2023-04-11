@@ -21,11 +21,11 @@ extension AppEndpoint: Endpoint {
         case .login:
             return "/api/login"
         case .courses:
-            return "/api/courses"
+            return "/api/courses/\(languagePath)"
         case .chapters:
-            return "/api/chapters"
+            return "/api/chapters/\(languagePath)"
         case .chapter(let id):
-            return "/api/chapters/\(id)"
+            return "/api/chapters/\(id)/\(languagePath)"
         }
     }
 
