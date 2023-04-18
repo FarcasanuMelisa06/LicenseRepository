@@ -93,6 +93,7 @@
                             <constraint firstItem="CGZ-B2-D2o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="yha-Mb-3RC"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="kAX-vR-fXp"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="login" destination="aBK-L0-meA" id="s8f-iP-3xj"/>
@@ -100,12 +101,12 @@
                         <outlet property="register" destination="3l1-Yg-quy" id="etj-Tb-spm"/>
                         <outlet property="txtPassword" destination="sNF-HL-FHL" id="vPg-rC-uHG"/>
                         <outlet property="txtUsername" destination="5Oy-JE-9hO" id="iIr-s0-4l2"/>
-                        <segue destination="jAi-pQ-hCU" kind="presentation" identifier="goToCoursesSegue" modalPresentationStyle="fullScreen" id="6I7-Cz-eom"/>
+                        <segue destination="jAi-pQ-hCU" kind="presentation" identifier="goToCoursesSegue" modalPresentationStyle="overFullScreen" id="6I7-Cz-eom"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="80.357142857142847"/>
+            <point key="canvasLocation" x="928.98550724637687" y="80.357142857142847"/>
         </scene>
         <!--Courses-->
         <scene sceneID="HpB-Rv-yal">
@@ -115,7 +116,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4od-WF-AzQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="782" y="80"/>
+            <point key="canvasLocation" x="1691.304347826087" y="79.6875"/>
         </scene>
     </scenes>
     <resources>

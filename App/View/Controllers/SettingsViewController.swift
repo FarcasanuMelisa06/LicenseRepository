@@ -14,6 +14,7 @@ class SettingsViewController: UIViewController, ManagerInjector {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         initUI()
     }
     
