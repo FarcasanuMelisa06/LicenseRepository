@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -66,6 +67,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABa-9W-ynf">
+                                <rect key="frame" x="134" y="805" width="146" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                    <color key="baseForegroundColor" name="PinkColor"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -73,6 +82,7 @@
                             <constraint firstItem="baa-Bl-dAn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="189" id="7eR-k5-20N"/>
                             <constraint firstItem="D1S-K9-JyA" firstAttribute="top" secondItem="7uk-4f-9XX" secondAttribute="bottom" constant="43.5" id="B9n-YX-cns"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Klq-Cr-aCl" secondAttribute="bottom" constant="462" id="Cqp-fz-eXX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ABa-9W-ynf" secondAttribute="trailing" constant="134" id="G0n-rq-RhY"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Klq-Cr-aCl" secondAttribute="trailing" constant="54" id="Itt-ZY-cX6"/>
                             <constraint firstItem="Cd4-ki-ZHo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="189" id="J9b-rT-FX0"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="KPZ-dG-jNY" secondAttribute="bottom" constant="472" id="MLc-ad-mqv"/>
@@ -85,6 +95,7 @@
                             <constraint firstItem="Yq7-Co-HEW" firstAttribute="top" secondItem="D1S-K9-JyA" secondAttribute="bottom" constant="49" id="TEQ-eC-y0a"/>
                             <constraint firstItem="baa-Bl-dAn" firstAttribute="top" secondItem="7uk-4f-9XX" secondAttribute="bottom" constant="36.5" id="UU9-Rr-7Wl"/>
                             <constraint firstItem="KPZ-dG-jNY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Ve1-P8-m7H"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ABa-9W-ynf" secondAttribute="bottom" constant="19" id="ZU4-ns-5jJ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Yq7-Co-HEW" secondAttribute="trailing" id="aeX-rV-YzZ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="7uk-4f-9XX" secondAttribute="bottom" constant="662.5" id="gCA-sI-egM"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Cd4-ki-ZHo" secondAttribute="trailing" constant="20" id="ht4-oC-gwC"/>
@@ -93,6 +104,8 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="baa-Bl-dAn" secondAttribute="trailing" constant="20" id="sGp-xt-Lp3"/>
                             <constraint firstItem="Yq7-Co-HEW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="swf-zP-1k1"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="D1S-K9-JyA" secondAttribute="bottom" constant="598" id="tqr-Ul-7mL"/>
+                            <constraint firstItem="ABa-9W-ynf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="134" id="vMy-B0-bGU"/>
+                            <constraint firstItem="ABa-9W-ynf" firstAttribute="top" secondItem="KPZ-dG-jNY" secondAttribute="bottom" constant="415" id="wsh-JE-hXQ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7uk-4f-9XX" secondAttribute="trailing" constant="20" id="xhg-Om-9cV"/>
                         </constraints>
                     </view>
@@ -108,6 +121,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="PinkColor">
+            <color red="1" green="0.3529999852180481" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

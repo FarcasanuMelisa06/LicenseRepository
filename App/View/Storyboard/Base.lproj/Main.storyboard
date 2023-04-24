@@ -52,11 +52,11 @@
                                 <color key="highlightedColor" name="Coffee"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book" translatesAutoresizingMaskIntoConstraints="NO" id="aKS-UY-2dn">
-                                <rect key="frame" x="20" y="108" width="374" height="200"/>
+                                <rect key="frame" x="80" y="108" width="254" height="148"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="10F-Z2-xt0"/>
-                                    <constraint firstAttribute="width" constant="374" id="tWt-8o-87L"/>
+                                    <constraint firstAttribute="height" constant="148" id="10F-Z2-xt0"/>
+                                    <constraint firstAttribute="width" constant="254" id="tWt-8o-87L"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3l1-Yg-quy">
@@ -76,7 +76,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aBK-L0-meA" firstAttribute="top" secondItem="CGZ-B2-D2o" secondAttribute="bottom" constant="30" id="6Rn-Lm-KwF"/>
-                            <constraint firstItem="cUh-V4-iju" firstAttribute="top" secondItem="aKS-UY-2dn" secondAttribute="bottom" constant="20" id="GGT-Vm-afF"/>
+                            <constraint firstItem="cUh-V4-iju" firstAttribute="top" secondItem="aKS-UY-2dn" secondAttribute="bottom" constant="72" id="GGT-Vm-afF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3l1-Yg-quy" secondAttribute="trailing" constant="80" id="J97-hK-iWv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3l1-Yg-quy" secondAttribute="bottom" constant="155" id="MJM-M1-Zmj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cUh-V4-iju" secondAttribute="trailing" constant="20" id="Qay-Ba-doa"/>
@@ -85,8 +85,8 @@
                             <constraint firstItem="CGZ-B2-D2o" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="dN4-14-diH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aBK-L0-meA" secondAttribute="trailing" constant="80" id="iBk-ap-d2J"/>
                             <constraint firstItem="CGZ-B2-D2o" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="oYn-Gv-SlG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aKS-UY-2dn" secondAttribute="trailing" constant="20" id="p9d-eb-l0f"/>
-                            <constraint firstItem="aKS-UY-2dn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rfD-bf-TWn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aKS-UY-2dn" secondAttribute="trailing" constant="80" id="p9d-eb-l0f"/>
+                            <constraint firstItem="aKS-UY-2dn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="rfD-bf-TWn"/>
                             <constraint firstItem="aKS-UY-2dn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="sjx-50-MNM"/>
                             <constraint firstItem="3l1-Yg-quy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="tB5-xB-ZDm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CGZ-B2-D2o" secondAttribute="trailing" constant="60" id="uik-pK-gae"/>
@@ -101,7 +101,7 @@
                         <outlet property="register" destination="3l1-Yg-quy" id="etj-Tb-spm"/>
                         <outlet property="txtPassword" destination="sNF-HL-FHL" id="vPg-rC-uHG"/>
                         <outlet property="txtUsername" destination="5Oy-JE-9hO" id="iIr-s0-4l2"/>
-                        <segue destination="jAi-pQ-hCU" kind="presentation" identifier="goToCoursesSegue" modalPresentationStyle="overFullScreen" id="6I7-Cz-eom"/>
+                        <segue destination="jAi-pQ-hCU" kind="presentation" identifier="goToCoursesSegue" modalPresentationStyle="fullScreen" id="6I7-Cz-eom"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

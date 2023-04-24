@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController, ManagerInjector {
 
@@ -28,6 +29,8 @@ class ViewController: UIViewController, ManagerInjector {
         register.layer.cornerRadius = 20
         
         initLanguage()
+        
+
     }
 
     @IBAction func btnLogin(_ sender: Any) {

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Cursuri-->
+        <!--Courses-->
         <scene sceneID="q1X-fl-8qL">
             <objects>
                 <viewController id="560-uO-Vg6" customClass="CoursesViewController" customModule="TestProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -70,7 +70,7 @@
                             <constraint firstItem="3Wt-ab-35B" firstAttribute="trailing" secondItem="L4q-CQ-qRO" secondAttribute="trailing" id="vEn-Mv-Bzn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Cursuri" id="XgD-iy-9XX">
+                    <navigationItem key="navigationItem" title="Courses" id="XgD-iy-9XX">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape.fill" catalog="system" id="BU8-xF-31K">
                             <color key="tintColor" name="PinkColor"/>
                             <connections>
