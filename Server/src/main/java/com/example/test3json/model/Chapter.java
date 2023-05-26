@@ -54,7 +54,7 @@ public class Chapter {
 //        this.initialdescriptionEn = initialdescriptionEn;
 //        this.image = image;
 //    }
-    public Chapter(Long id,String name, String content, String initialdescription, String image){
+    public Chapter(Long id, String name, String content, String initialdescription, String image){
         this.id = id;
         this.name = name;
         this.content = content;

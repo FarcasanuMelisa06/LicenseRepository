@@ -16,13 +16,15 @@ public class User {
     private String password;
 
 
+
     public User(){
     }
 
-    public User(Long id, String username, String password){
+    public User(Long id, String username, String password, String token){
         this.id = id;
         this.username = username;
         this.password = password;
+
     }
 
     public Long getId() {
