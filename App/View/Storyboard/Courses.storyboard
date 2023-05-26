@@ -71,23 +71,42 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Courses" id="XgD-iy-9XX">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape.fill" catalog="system" id="BU8-xF-31K">
-                            <color key="tintColor" name="PinkColor"/>
-                            <connections>
-                                <action selector="settings:" destination="560-uO-Vg6" id="TGn-9Z-EFm"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="gearshape.fill" catalog="system" id="BU8-xF-31K">
+                                <color key="tintColor" name="PinkColor"/>
+                                <connections>
+                                    <action selector="settings:" destination="560-uO-Vg6" id="TGn-9Z-EFm"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="magnifyingglass" catalog="system" id="0zH-YT-XdL">
+                                <color key="tintColor" name="PinkColor"/>
+                                <connections>
+                                    <action selector="search:" destination="560-uO-Vg6" id="tfR-zM-OSr"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="L4q-CQ-qRO" id="hbR-JK-qqZ"/>
                         <segue destination="uRz-en-Qt6" kind="show" identifier="goToChaptersSegue" id="hDT-0T-tS7"/>
                         <segue destination="0V8-Y7-f7H" kind="show" identifier="goToSettingsSeque" id="KHL-m0-P6T"/>
+                        <segue destination="7S7-yD-LA5" kind="show" identifier="goToSearchSeque" id="DFy-iB-LZE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tqT-cO-Pwe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="568.1159420289855" y="-182.14285714285714"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="f7N-85-2jS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Search" id="7S7-yD-LA5" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="FHn-yx-6F1"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M49-f9-dDC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1195" y="-296"/>
         </scene>
         <!--Settings-->
         <scene sceneID="5iY-QL-mHG">
@@ -130,6 +149,7 @@
     </scenes>
     <resources>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <namedColor name="Coffee">
             <color red="0.37599998712539673" green="0.25099998712539673" blue="0.23899999260902405" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

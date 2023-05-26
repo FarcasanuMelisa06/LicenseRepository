@@ -28,7 +28,9 @@ extension Endpoint {
     }
     
     var host: String {
-        return "localhost"
+         return "localhost"
+         //return "192.168.1.2"
+        //return "172.20.10.2"
     }
     
     var port: Int? {

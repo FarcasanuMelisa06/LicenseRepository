@@ -15,6 +15,9 @@ class ChaptersViewController: UIViewController {
     @IBAction func settings(_ sender: Any) {
         performSegue(withIdentifier: "goToSettingsSeque", sender: nil)
     }
+    @IBAction func search(_ sender: Any) {
+        performSegue(withIdentifier: "goToSearchSeque", sender: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +44,7 @@ class ChaptersViewController: UIViewController {
             switch result {
             case .success(let response):
                 print("Capitolele au fost aduse cu succes \(response)")
-                chapters = response
+                chapters = response.sorted(by: { $0.id < $1.id })
                 tableView.reloadData()
             case .failure(let error):
                 print("Eroare \(error)")

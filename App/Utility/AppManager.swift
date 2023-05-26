@@ -35,4 +35,12 @@ class Manager {
             self.defaults.set(newValue, forKey: "language")
         }
     }
+    
+    internal var token: String? {
+        get {
+            return self.defaults.string(forKey: "token")
+        } set {
+            self.defaults.set(newValue, forKey: "token")
+        }
+    }
 }

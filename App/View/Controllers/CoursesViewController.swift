@@ -17,6 +17,9 @@ class CoursesViewController: UIViewController {
         performSegue(withIdentifier: "goToSettingsSeque", sender: nil)
     }
     
+    @IBAction func search(_ sender: Any) {
+        performSegue(withIdentifier: "goToSearchSeque", sender: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCourses()

@@ -13,6 +13,10 @@ struct AppService: HTTPClient {
         return await sendRequest(endpoint: AppEndpoint.login(username: username, password: password), responseModel: User.self)
     }
     
+    func register(username: String, password: String) async -> Result<User, RequestError> {
+        return await sendRequest(endpoint: AppEndpoint.register(username: username, password: password), responseModel: User.self)
+    }
+    
     func getCourses() async -> Result<[Course], RequestError> {
         return await sendRequest(endpoint: AppEndpoint.courses, responseModel: [Course].self)
     }

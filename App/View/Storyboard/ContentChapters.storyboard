@@ -45,8 +45,8 @@
                                     <constraint firstItem="AvE-4t-cO9" firstAttribute="top" secondItem="DKp-OC-5RS" secondAttribute="top" id="ocn-1o-xbv"/>
                                 </constraints>
                             </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numele capitolului" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9T9-KN-lad">
-                                <rect key="frame" x="0.0" y="108" width="414" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Numele capitolului" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9T9-KN-lad">
+                                <rect key="frame" x="0.0" y="94" width="415" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" name="PinkColor"/>
                                 <nil key="highlightedColor"/>
@@ -58,9 +58,9 @@
                             <constraint firstItem="jRf-Cq-eYl" firstAttribute="bottom" secondItem="DKp-OC-5RS" secondAttribute="bottom" id="2pW-Qx-NNp"/>
                             <constraint firstItem="DKp-OC-5RS" firstAttribute="top" secondItem="jRf-Cq-eYl" secondAttribute="top" constant="41" id="8XX-2c-2Nq"/>
                             <constraint firstItem="AvE-4t-cO9" firstAttribute="height" secondItem="jRf-Cq-eYl" secondAttribute="height" priority="250" id="AHd-Je-25S"/>
-                            <constraint firstItem="jRf-Cq-eYl" firstAttribute="trailing" secondItem="9T9-KN-lad" secondAttribute="trailing" id="CtP-s2-gIi"/>
+                            <constraint firstItem="jRf-Cq-eYl" firstAttribute="trailing" secondItem="9T9-KN-lad" secondAttribute="trailing" constant="-1" id="CtP-s2-gIi"/>
                             <constraint firstItem="jRf-Cq-eYl" firstAttribute="trailing" secondItem="DKp-OC-5RS" secondAttribute="trailing" id="PRh-O6-jKf"/>
-                            <constraint firstItem="9T9-KN-lad" firstAttribute="top" secondItem="jRf-Cq-eYl" secondAttribute="top" constant="20" id="fUo-Qm-uV4"/>
+                            <constraint firstItem="9T9-KN-lad" firstAttribute="top" secondItem="jRf-Cq-eYl" secondAttribute="top" constant="6" id="fUo-Qm-uV4"/>
                             <constraint firstItem="9T9-KN-lad" firstAttribute="leading" secondItem="jRf-Cq-eYl" secondAttribute="leading" id="mSO-yu-tbZ"/>
                             <constraint firstItem="DKp-OC-5RS" firstAttribute="leading" secondItem="jRf-Cq-eYl" secondAttribute="leading" id="nIu-nC-5ce"/>
                             <constraint firstItem="AvE-4t-cO9" firstAttribute="width" secondItem="jRf-Cq-eYl" secondAttribute="width" id="nua-b6-gbd"/>
@@ -81,6 +81,12 @@
                                     <action selector="audio:" destination="Q1r-Xj-KNu" id="T1e-jK-3tM"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem title="Item" image="magnifyingglass" catalog="system" id="xiw-tz-ePX">
+                                <color key="tintColor" name="PinkColor"/>
+                                <connections>
+                                    <action selector="search:" destination="Q1r-Xj-KNu" id="ldc-0z-rEE"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -90,11 +96,22 @@
                         <outlet property="chapterName" destination="9T9-KN-lad" id="rxb-bc-uXA"/>
                         <outlet property="content" destination="4cA-ma-zAr" id="ECr-ZF-ILj"/>
                         <segue destination="46v-dx-rv8" kind="show" identifier="goToSettingsSeque" id="AeB-kc-Jov"/>
+                        <segue destination="qcQ-Pb-IUz" kind="show" identifier="goToSeachSeque" id="whv-T2-8dR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3l-TE-oyg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2088.4057971014495" y="7.3660714285714279"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="DL0-7B-Ps4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Search" id="qcQ-Pb-IUz" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="oNp-9I-ggh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ps4-G1-lQT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2688" y="-78"/>
         </scene>
         <!--Settings-->
         <scene sceneID="KGp-yX-Ehk">
@@ -104,11 +121,12 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tut-D7-yT5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2667.3913043478265" y="-24.107142857142858"/>
+            <point key="canvasLocation" x="2744" y="7"/>
         </scene>
     </scenes>
     <resources>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <namedColor name="PinkColor">
             <color red="1" green="0.3529999852180481" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

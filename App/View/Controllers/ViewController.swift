@@ -28,19 +28,25 @@ class ViewController: UIViewController, ManagerInjector {
         login.layer.cornerRadius = 20
         register.layer.cornerRadius = 20
         
+        txtPassword.isSecureTextEntry = true
+        
         initLanguage()
         
-
+        autoLogin()
     }
 
+    @IBAction func register(_ sender: Any) {
+        performSegue(withIdentifier: "goToRegisterSeque", sender: nil)
+    }
+    
     @IBAction func btnLogin(_ sender: Any) {
-        
         let service = AppService()
         Task(priority: .background) {
             let result = await service.login(username: txtUsername.text ?? "", password: txtPassword.text ?? "")
             switch result {
             case .success(let response):
                 print("Login cu succes \(response.token)")
+                manager.token = response.token
                 performSegue(withIdentifier: "goToCoursesSegue", sender: self)
             case .failure(let error):
                 print("Eroare \(error)")
@@ -52,6 +58,13 @@ class ViewController: UIViewController, ManagerInjector {
         guard let _ = manager.language else {
             manager.language = AppLanguage.romanian.rawValue
             return
+        }
+    }
+    
+    private func autoLogin() {
+        guard let token = manager.token else { return }
+        if token != "" {
+            performSegue(withIdentifier: "goToCoursesSegue", sender: self)
         }
     }
 }

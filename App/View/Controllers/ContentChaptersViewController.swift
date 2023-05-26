@@ -21,6 +21,10 @@ class ContentChaptersViewController: UIViewController, ManagerInjector{
     let pauseIcon = UIImage(named: "pauseIcon.png")
     let synth = AVSpeechSynthesizer()
     
+    @IBAction func search(_ sender: Any) {
+        performSegue(withIdentifier: "goToSeachSeque", sender: nil)
+    }
+    
     
     @IBAction func audio(_ sender: Any) {
         

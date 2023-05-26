@@ -9,6 +9,7 @@ import Foundation
 
 enum AppEndpoint {
     case login(username: String, password: String)
+    case register(username: String, password: String)
     case courses
     case chapters
     case chapter(id: Int)
@@ -20,6 +21,8 @@ extension AppEndpoint: Endpoint {
         switch self {
         case .login:
             return "/api/login"
+        case .register:
+            return "/api/register"
         case .courses:
             return "/api/courses/\(languagePath)"
         case .chapters:
@@ -31,7 +34,7 @@ extension AppEndpoint: Endpoint {
 
     var method: RequestMethod {
         switch self {
-        case .login:
+        case .login, .register:
             return .post
         case .courses, .chapters, .chapter:
             return .get
@@ -41,6 +44,10 @@ extension AppEndpoint: Endpoint {
     var body: [String: Any]? {
         switch self {
         case .login(let username, let password):
+            return ["username": "\(username)",
+                    "password": "\(password)"
+            ]
+        case .register(let username, let password):
             return ["username": "\(username)",
                     "password": "\(password)"
             ]
