@@ -13,16 +13,16 @@ import java.util.Optional;
 public interface ChaptersRepository extends JpaRepository<Chapter, Long> {
 
 
-    @Query ("SELECT new com.example.test3json.model.Chapter(c.id, c.nameEn, c.contentEn, c.initialdescriptionEn, c.image) FROM Chapter c")
+    @Query ("SELECT new com.example.test3json.model.Chapter(c.id, c.nameEn, c.contentEn, c.initialdescriptionEn, c.image, c.videoid) FROM Chapter c")
     List<Chapter> findAllChaptersWithEnglishName();
 
-    @Query ("SELECT new com.example.test3json.model.Chapter(c.id, c.name, c.content, c.initialdescription, c.image) FROM Chapter c")
+    @Query ("SELECT new com.example.test3json.model.Chapter(c.id, c.name, c.content, c.initialdescription, c.image, c.videoid) FROM Chapter c")
     List<Chapter> findAllChaptersWithRomanianName();
 
-    @Query("SELECT new com.example.test3json.model.Chapter( c.id,c.name, c.content, c.initialdescription, c.image) FROM Chapter c WHERE c.id = :id")
+    @Query("SELECT new com.example.test3json.model.Chapter( c.id,c.name, c.content, c.initialdescription, c.image, c.videoid) FROM Chapter c WHERE c.id = :id")
     Chapter findChapterByIdWithSelectedFieldsRo(@Param("id") Long id);
 
-    @Query("SELECT new com.example.test3json.model.Chapter(c.id, c.nameEn, c.contentEn, c.initialdescriptionEn, c.image) FROM Chapter c WHERE c.id = :id")
+    @Query("SELECT new com.example.test3json.model.Chapter(c.id, c.nameEn, c.contentEn, c.initialdescriptionEn, c.image, c.videoid) FROM Chapter c WHERE c.id = :id")
     Chapter findChapterByIdWithSelectedFieldsEn(@Param("id") Long id);
 
     List<Chapter> findAllByOrderByIdAsc();

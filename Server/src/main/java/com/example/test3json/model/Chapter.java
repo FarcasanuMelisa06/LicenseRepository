@@ -21,6 +21,7 @@ public class Chapter {
     @Column(name = "contenten",nullable = false)
     private String contentEn;
 
+
     @Column(name = "image",nullable = false)
     private String image;
 
@@ -29,6 +30,9 @@ public class Chapter {
 
     @Column(name = "initialdescriptionen",nullable = false)
     private String initialdescriptionEn;
+
+    @Column(name = "videoid",nullable = false)
+    private String videoid;
 
     public Chapter(){
 
@@ -54,12 +58,14 @@ public class Chapter {
 //        this.initialdescriptionEn = initialdescriptionEn;
 //        this.image = image;
 //    }
-    public Chapter(Long id, String name, String content, String initialdescription, String image){
+    public Chapter(Long id, String name, String content, String initialdescription, String image, String videoid){
         this.id = id;
         this.name = name;
         this.content = content;
         this.initialdescription = initialdescription;
         this.image = image;
+        this.videoid = videoid;
+
     }
 
     public Long getId() {
@@ -123,5 +129,12 @@ public class Chapter {
     }
     public void setInitialdescriptionEn(String initialdescriptionEn) {
         this.initialdescriptionEn = initialdescriptionEn;
+    }
+
+    public String getVideoid() {
+        return videoid;
+    }
+    public void setVideoid(String videoid) {
+        this.videoid = videoid;
     }
 }

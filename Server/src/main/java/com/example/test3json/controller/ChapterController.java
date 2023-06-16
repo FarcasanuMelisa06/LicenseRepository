@@ -2,8 +2,10 @@ package com.example.test3json.controller;
 
 import com.example.test3json.model.Chapter;
 import com.example.test3json.repository.ChaptersRepository;
+import com.example.test3json.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.*;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/chapters")
@@ -19,7 +22,14 @@ import java.util.List;
 public class ChapterController {
     @Autowired
     private ChaptersRepository chaptersRepository;
+    //private final ImageService imageService;
 
+
+//    @Autowired
+//    public ChapterController(ChaptersRepository chaptersRepository, ImageService imageService) {
+//        this.chaptersRepository = chaptersRepository;
+//        this.imageService = imageService;
+//    }
     public ChapterController() throws IOException {
     }
 
@@ -97,6 +107,23 @@ public class ChapterController {
 //        } catch (Exception e) {
 //            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Eroare la încărcarea imaginii.");
 //        }
+//    }
+
+
+//    @PostMapping("/{id}/image")
+//    public ResponseEntity<String> uploadImage(@PathVariable("id") Long id, @RequestParam("image") MultipartFile imageFile) {
+//        try {
+//            imageService.saveImage(id, imageFile);
+//            return ResponseEntity.ok("Imaginea a fost încărcată cu succes.");
+//        } catch (IOException e) {
+//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Eroare la încărcarea imaginii.");
+//        }
+//    }
+//
+//    @GetMapping("/{id}/image")
+//    public ResponseEntity<byte[]> getImage(@PathVariable("id") Long id) {
+//        byte[] imageData = imageService.getImage(id);
+//        return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imageData);
 //    }
 }
 
