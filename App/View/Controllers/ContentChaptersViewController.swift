@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import AVFoundation
+import youtube_ios_player_helper
 
 class ContentChaptersViewController: UIViewController, ManagerInjector{
     
@@ -15,6 +16,8 @@ class ContentChaptersViewController: UIViewController, ManagerInjector{
     @IBOutlet weak var content: UILabel!
  
     @IBOutlet var audioButton: UIBarButtonItem!
+    
+    @IBOutlet var playerLayer: YTPlayerView!
     
     var contentAudio: String!
     let playIcon = UIImage(named: "play.png")
@@ -75,6 +78,8 @@ class ContentChaptersViewController: UIViewController, ManagerInjector{
         chapterName.text = chapterTitle
         audioButton.setBackgroundImage(playIcon, for: .normal, barMetrics: .default)
         
+       
+        
     }
     func loadChaptersContent() {
         if let id = chapterId {
@@ -87,6 +92,7 @@ class ContentChaptersViewController: UIViewController, ManagerInjector{
                     chapter = response
                     content.text = response.content
                     contentAudio = response.content
+                    playerLayer.load(withVideoId: response.videoid)
                 case .failure(let error):
                     print("Eroare \(error)")
                 }

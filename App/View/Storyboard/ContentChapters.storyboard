@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q1r-Xj-KNu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q1r-Xj-KNu">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKp-OC-5RS">
-                                <rect key="frame" x="0.0" y="129" width="414" height="684"/>
+                                <rect key="frame" x="0.0" y="347" width="414" height="466"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AvE-4t-cO9" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="61.5"/>
+                                        <rect key="frame" x="0.0" y="10" width="414" height="61.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Content" lineBreakMode="tailTruncation" numberOfLines="206" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cA-ma-zAr">
                                                 <rect key="frame" x="20" y="40" width="374" height="21.5"/>
@@ -42,28 +43,38 @@
                                     <constraint firstAttribute="bottom" secondItem="AvE-4t-cO9" secondAttribute="bottom" id="Pyn-JG-4Mz"/>
                                     <constraint firstAttribute="trailing" secondItem="AvE-4t-cO9" secondAttribute="trailing" id="Zeo-qV-h6m"/>
                                     <constraint firstItem="AvE-4t-cO9" firstAttribute="leading" secondItem="DKp-OC-5RS" secondAttribute="leading" id="ghe-dt-ftf"/>
-                                    <constraint firstItem="AvE-4t-cO9" firstAttribute="top" secondItem="DKp-OC-5RS" secondAttribute="top" id="ocn-1o-xbv"/>
+                                    <constraint firstItem="AvE-4t-cO9" firstAttribute="top" secondItem="DKp-OC-5RS" secondAttribute="top" constant="10" id="ocn-1o-xbv"/>
                                 </constraints>
                             </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Numele capitolului" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9T9-KN-lad">
-                                <rect key="frame" x="0.0" y="94" width="415" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numele capitolului" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9T9-KN-lad">
+                                <rect key="frame" x="0.0" y="98" width="415" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" name="PinkColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g2b-QE-1Mj" customClass="YTPlayerView">
+                                <rect key="frame" x="10" y="147" width="394" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Uza-JM-63c"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jRf-Cq-eYl"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="DKp-OC-5RS" firstAttribute="top" secondItem="g2b-QE-1Mj" secondAttribute="bottom" id="2gp-GS-Pz5"/>
                             <constraint firstItem="jRf-Cq-eYl" firstAttribute="bottom" secondItem="DKp-OC-5RS" secondAttribute="bottom" id="2pW-Qx-NNp"/>
-                            <constraint firstItem="DKp-OC-5RS" firstAttribute="top" secondItem="jRf-Cq-eYl" secondAttribute="top" constant="41" id="8XX-2c-2Nq"/>
                             <constraint firstItem="AvE-4t-cO9" firstAttribute="height" secondItem="jRf-Cq-eYl" secondAttribute="height" priority="250" id="AHd-Je-25S"/>
                             <constraint firstItem="jRf-Cq-eYl" firstAttribute="trailing" secondItem="9T9-KN-lad" secondAttribute="trailing" constant="-1" id="CtP-s2-gIi"/>
+                            <constraint firstItem="jRf-Cq-eYl" firstAttribute="trailing" secondItem="g2b-QE-1Mj" secondAttribute="trailing" constant="10" id="L1A-9C-gca"/>
                             <constraint firstItem="jRf-Cq-eYl" firstAttribute="trailing" secondItem="DKp-OC-5RS" secondAttribute="trailing" id="PRh-O6-jKf"/>
                             <constraint firstItem="9T9-KN-lad" firstAttribute="top" secondItem="jRf-Cq-eYl" secondAttribute="top" constant="6" id="fUo-Qm-uV4"/>
                             <constraint firstItem="9T9-KN-lad" firstAttribute="leading" secondItem="jRf-Cq-eYl" secondAttribute="leading" id="mSO-yu-tbZ"/>
+                            <constraint firstItem="g2b-QE-1Mj" firstAttribute="leading" secondItem="jRf-Cq-eYl" secondAttribute="leading" constant="10" id="mu0-EP-Wq4"/>
                             <constraint firstItem="DKp-OC-5RS" firstAttribute="leading" secondItem="jRf-Cq-eYl" secondAttribute="leading" id="nIu-nC-5ce"/>
                             <constraint firstItem="AvE-4t-cO9" firstAttribute="width" secondItem="jRf-Cq-eYl" secondAttribute="width" id="nua-b6-gbd"/>
+                            <constraint firstItem="g2b-QE-1Mj" firstAttribute="top" secondItem="9T9-KN-lad" secondAttribute="bottom" constant="20" id="uzj-PV-Deb"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -95,6 +106,7 @@
                         <outlet property="audioButton" destination="5aq-AB-RUz" id="Bqr-e5-ZBW"/>
                         <outlet property="chapterName" destination="9T9-KN-lad" id="rxb-bc-uXA"/>
                         <outlet property="content" destination="4cA-ma-zAr" id="ECr-ZF-ILj"/>
+                        <outlet property="playerLayer" destination="g2b-QE-1Mj" id="foV-ZO-wpg"/>
                         <segue destination="46v-dx-rv8" kind="show" identifier="goToSettingsSeque" id="AeB-kc-Jov"/>
                         <segue destination="qcQ-Pb-IUz" kind="show" identifier="goToSeachSeque" id="whv-T2-8dR"/>
                     </connections>
@@ -125,8 +137,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="123"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <namedColor name="PinkColor">
             <color red="1" green="0.3529999852180481" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

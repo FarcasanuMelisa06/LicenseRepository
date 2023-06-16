@@ -13,4 +13,5 @@ struct Chapter: Codable {
     var content: String
     var image: String
     var initialdescription: String
+    var videoid: String
 }
