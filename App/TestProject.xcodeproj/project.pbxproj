@@ -11,6 +11,7 @@
 		7D11D680DA3DB432798F3AF5 /* Pods_TestProject_TestProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DBEEB5AEF7F33693BEA2C6 /* Pods_TestProject_TestProjectUITests.framework */; };
 		835BAD1429F98C44006BC18A /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 835BAD1329F98C44006BC18A /* Register.storyboard */; };
 		835BAD1629F98E0B006BC18A /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835BAD1529F98E0B006BC18A /* RegisterController.swift */; };
+		837A9F9D2A3D9B56005E7791 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837A9F9C2A3D9B56005E7791 /* UIViewControllerExtension.swift */; };
 		837FAFC729CEEE1300251400 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 837FAFC629CEEE1300251400 /* SDWebImage */; };
 		837FAFC929CEEE1300251400 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 837FAFC829CEEE1300251400 /* SDWebImageMapKit */; };
 		837FAFCF29CEF81F00251400 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837FAFCE29CEF81F00251400 /* UICollectionViewExtension.swift */; };
@@ -73,6 +74,7 @@
 		5153D73F8FA4895A6FF3A3EA /* Pods-TestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProject.release.xcconfig"; path = "Target Support Files/Pods-TestProject/Pods-TestProject.release.xcconfig"; sourceTree = "<group>"; };
 		835BAD1329F98C44006BC18A /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		835BAD1529F98E0B006BC18A /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		837A9F9C2A3D9B56005E7791 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		837FAFCE29CEF81F00251400 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 		837FAFD229CF32AF00251400 /* ContentChaptersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentChaptersViewController.swift; sourceTree = "<group>"; };
 		8381983A29DE990E00C5F8B2 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -157,7 +159,6 @@
 				32759B4875B9756E4D6E4592 /* Pods-TestProjectTests.debug.xcconfig */,
 				BA07BDD271F395A5B501AE8F /* Pods-TestProjectTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -165,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				837FAFCE29CEF81F00251400 /* UICollectionViewExtension.swift */,
+				837A9F9C2A3D9B56005E7791 /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -436,7 +438,7 @@
 			);
 			mainGroup = 838622B429BB2D3500D7895B;
 			packageReferences = (
-				837FAFC529CEEE1300251400 /* XCRemoteSwiftPackageReference "SDWebImage.git" */,
+				837FAFC529CEEE1300251400 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 838622BE29BB2D3500D7895B /* Products */;
 			projectDirPath = "";
@@ -610,6 +612,7 @@
 				83BCF34629C2323D00F3AF01 /* AppEndpoint.swift in Sources */,
 				83BCF35429C3454B00F3AF01 /* CourseCell.swift in Sources */,
 				837FAFD329CF32AF00251400 /* ContentChaptersViewController.swift in Sources */,
+				837A9F9D2A3D9B56005E7791 /* UIViewControllerExtension.swift in Sources */,
 				838622C329BB2D3500D7895B /* SceneDelegate.swift in Sources */,
 				83BCF33C29C22A9200F3AF01 /* Chapter.swift in Sources */,
 				83BCF34A29C31E5600F3AF01 /* AppServices.swift in Sources */,
@@ -795,11 +798,12 @@
 				DEVELOPMENT_TEAM = L5843NSAL5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestProject/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = UniLearn;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -825,11 +829,12 @@
 				DEVELOPMENT_TEAM = L5843NSAL5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestProject/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = UniLearn;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -962,7 +967,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		837FAFC529CEEE1300251400 /* XCRemoteSwiftPackageReference "SDWebImage.git" */ = {
+		837FAFC529CEEE1300251400 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
 			requirement = {
@@ -975,12 +980,12 @@
 /* Begin XCSwiftPackageProductDependency section */
 		837FAFC629CEEE1300251400 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 837FAFC529CEEE1300251400 /* XCRemoteSwiftPackageReference "SDWebImage.git" */;
+			package = 837FAFC529CEEE1300251400 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
 		};
 		837FAFC829CEEE1300251400 /* SDWebImageMapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 837FAFC529CEEE1300251400 /* XCRemoteSwiftPackageReference "SDWebImage.git" */;
+			package = 837FAFC529CEEE1300251400 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImageMapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
