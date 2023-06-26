@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    //metodă findByUsernameAndPassword username și password, și returnează un obiect de tip User
+    //returnează un obiect de tip User
     //dacă există un utilizatorul in baza de date sau null daca nu exista
     User findByUsernameAndPassword(String username, String password);
 

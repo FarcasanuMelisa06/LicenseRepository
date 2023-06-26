@@ -8,56 +8,31 @@ public class Chapter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column(name = "name", nullable = false)
     private String name;
-
     @Column(name = "nameen", nullable = false)
     private String nameEn;
-
     @Column(name = "content",nullable = false)
     private String content;
-
     @Column(name = "contenten",nullable = false)
     private String contentEn;
-
-
     @Column(name = "image",nullable = false)
     private String image;
-
     @Column(name = "initialdescription",nullable = false)
     private String initialdescription;
-
     @Column(name = "initialdescriptionen",nullable = false)
     private String initialdescriptionEn;
-
     @Column(name = "videoid",nullable = false)
     private String videoid;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "course_id")
+    private Course course;
 
     public Chapter(){
 
     }
 
-//    public Chapter(Long id, String nameRo,String nameEn,
-//                   String contentRo,String contentEn,
-//                   String image, String initialdescriptionRo, String initialdescriptionEn){
-//        this.id = id;
-//        this.nameRo = nameRo;
-//        this.nameEn = nameEn;
-//        this.contentRo = contentRo;
-//        this.contentEn = contentEn;
-//        this.image = image;
-//        this.initialdescriptionRo = initialdescriptionRo;
-//        this.initialdescriptionEn = initialdescriptionEn;
-//    }
-
-//    public Chapter(Long id, String nameEn, String contentEn, String initialdescriptionEn, String image){
-//        this.id = id;
-//        this.nameEn = nameEn;
-//        this.contentEn = contentEn;
-//        this.initialdescriptionEn = initialdescriptionEn;
-//        this.image = image;
-//    }
     public Chapter(Long id, String name, String content, String initialdescription, String image, String videoid){
         this.id = id;
         this.name = name;
@@ -65,7 +40,6 @@ public class Chapter {
         this.initialdescription = initialdescription;
         this.image = image;
         this.videoid = videoid;
-
     }
 
     public Long getId() {
@@ -137,4 +111,12 @@ public class Chapter {
     public void setVideoid(String videoid) {
         this.videoid = videoid;
     }
+
+//    public Course getCourse() {
+//        return course;
+//    }
+//
+//    public void setCourse(Course course) {
+//        this.course = course;
+//    }
 }

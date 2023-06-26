@@ -10,10 +10,11 @@ import java.util.List;
 @Repository
 public interface CourseRepository extends JpaRepository<Course, Long> {
 
-    @Query("SELECT new com.example.test3json.model.Course(c.id, c.nameEn) FROM Course c")
+    @Query("SELECT new com.example.test3json.model.Course(c.id, c.nameEn)FROM Course c")
     List<Course> findAllCoursesWithEnglishName();
 
     @Query("SELECT new com.example.test3json.model.Course(c.id, c.name)FROM Course c")
     List<Course> findAllCoursesWithRomanianName();
 
+    List<Course> findAllByOrderByIdAsc();
 }

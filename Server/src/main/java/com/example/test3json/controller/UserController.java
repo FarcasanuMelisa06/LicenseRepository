@@ -48,7 +48,6 @@ public class UserController {
 
         @PostMapping("/register")
         public ResponseEntity<Map<String, String>> registerUser(@RequestBody User user) {
-        // boolean userExist = userService.checkIfUserExists(user.getUsername());
 
             if (userService.checkIfUserExists(user.getUsername())) {
                 // creem un obiect de tipul Map care va fi convertit în JSON
@@ -67,13 +66,5 @@ public class UserController {
                 return ResponseEntity.ok(responseMap);
 
             }
-
-//            if (userService.checkIfUserExists(user.getUsername())) {
-//                //return ResponseEntity.badRequest().body("User already exists.");
-//                Map<String, String> responseMap = new HashMap<>();
-//                responseMap.put("token", "dfsgjksdbgksbgsbgvsbgfd");
-//            }
-//            userService.saveUser(user);
-//            return ResponseEntity.ok("User registered successfully.");
         }
     }
