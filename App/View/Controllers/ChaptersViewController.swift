@@ -12,6 +12,10 @@ class ChaptersViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var chapters: [Chapter] = []
+    
+    var courseId: Int?
+    
+    //trimite utilizatorul in pagina de setari
     @IBAction func settings(_ sender: Any) {
         performSegue(withIdentifier: "goToSettingsSeque", sender: nil)
     }
@@ -22,6 +26,8 @@ class ChaptersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadChapters()
+        //functie pentru ascunderea tastaturii
+        self.setupHideKeyboardOnTap()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -38,33 +44,36 @@ class ChaptersViewController: UIViewController {
     }
     
     func loadChapters() {
-        let service = AppService()
-        Task(priority: .background) {
-            let result = await service.getChapters()
-            switch result {
-            case .success(let response):
-                print("Capitolele au fost aduse cu succes \(response)")
-                chapters = response.sorted(by: { $0.id < $1.id })
-                tableView.reloadData()
-            case .failure(let error):
-                print("Eroare \(error)")
+        if let id = courseId {
+            let service = AppService()
+            Task(priority: .background) {
+                let result = await service.getChapters(id: id)
+                switch result {
+                case .success(let response):
+                    print("Capitolele au fost aduse cu succes \(response)")
+                    chapters = response.sorted(by: { $0.id < $1.id })
+                    tableView.reloadData()
+                case .failure(let error):
+                    print("Eroare \(error)")
+                }
             }
         }
     }
 }
 
 extension ChaptersViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    //returneaza numarul de randuri din vectorul "courses"
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return chapters.count
     }
     
+    //returneaza o celula pentru un anumite indexPath care surprinde informatiile despre un capitol
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell  = tableView.dequeueReusableCell(withIdentifier: "ChapterCell", for: indexPath) as? ChapterCell {
             cell.configure(title: chapters[indexPath.row].name, image: chapters[indexPath.row].image, initialdescription: chapters[indexPath.row].initialdescription)
             cell.layer.borderWidth = 3
             cell.layer.cornerRadius = 20
-           
-            
             cell.onPressReadMore = { [weak self] title in
                 self?.performSegue(withIdentifier: "goToContentChapterSegue", sender: indexPath.row)
             }
@@ -74,30 +83,8 @@ extension ChaptersViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     
+    //returneaza dimensiunea pentru tableView
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.frame.height
     }
 }
-
-//extension ChaptersViewController: UITableViewDelegate {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: UIScreen.main.bounds.width - 40, height: UIScreen.main.bounds.height/1.3)
-//    }
-//}
-//
-//extension ChaptersViewController: UIScrollViewDelegate {
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        self.collectionView.scrollToNearestVisibleCollectionViewCell()
-//
-//    }
-//
-//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-//        if !decelerate {
-//            self.collectionView.scrollToNearestVisibleCollectionViewCell()
-//        }
-//    }
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath){
-//        performSegue(withIdentifier: "goToContentChapterSeque", sender: nil)
-//    }
-//
-//}

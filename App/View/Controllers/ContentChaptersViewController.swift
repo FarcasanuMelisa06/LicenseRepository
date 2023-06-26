@@ -24,6 +24,16 @@ class ContentChaptersViewController: UIViewController, ManagerInjector{
     let pauseIcon = UIImage(named: "pauseIcon.png")
     let synth = AVSpeechSynthesizer()
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadChaptersContent() //incarcarea continutului
+        chapterName.text = chapterTitle //setarea titlului corespunzator
+        audioButton.setBackgroundImage(playIcon, for: .normal, barMetrics: .default)
+        self.setupHideKeyboardOnTap()
+    }
+    
+    //trimite utilizatorul la partea de setari
     @IBAction func search(_ sender: Any) {
         performSegue(withIdentifier: "goToSeachSeque", sender: nil)
     }
@@ -72,15 +82,7 @@ class ContentChaptersViewController: UIViewController, ManagerInjector{
     var chapter: Chapter?
     var chapterId: Int?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        loadChaptersContent()
-        chapterName.text = chapterTitle
-        audioButton.setBackgroundImage(playIcon, for: .normal, barMetrics: .default)
-        
-       
-        
-    }
+ 
     func loadChaptersContent() {
         if let id = chapterId {
             let service = AppService()

@@ -15,6 +15,7 @@ class RegisterController: UIViewController, ManagerInjector {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupHideKeyboardOnTap()
     }
     
     @IBAction func createAccount(_ sender: Any) {

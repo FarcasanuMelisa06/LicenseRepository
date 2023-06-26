@@ -16,6 +16,7 @@ class SettingsViewController: UIViewController, ManagerInjector {
         super.viewDidLoad()
         
         initUI()
+        self.setupHideKeyboardOnTap()
     }
     
     @IBAction func switchLanguage(_ sender: Any) {

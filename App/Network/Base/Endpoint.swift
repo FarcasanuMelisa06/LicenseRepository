@@ -20,23 +20,17 @@ protocol Endpoint: ManagerInjector {
 
 extension Endpoint {
     var scheme: String {
-        return "http"
-    }
+        return "http"}
     
     var header: [String: String]? {
-        return ["Content-Type": "application/json"]
-    }
+        return ["Content-Type": "application/json"]}
     
     var host: String {
-         return "localhost"
-         //return "192.168.1.2"
-        //return "172.20.10.2"
+        return "localhost"
+        //return "192.168.1.5"
     }
-    
     var port: Int? {
-        return 8080
-    }
-    
+        return 8080 }
     var languagePath: String {
         return manager.language ?? AppLanguage.romanian.rawValue
     }

@@ -33,6 +33,8 @@ class ViewController: UIViewController, ManagerInjector {
         initLanguage()
         
         autoLogin()
+        
+        self.setupHideKeyboardOnTap()
     }
 
     @IBAction func register(_ sender: Any) {

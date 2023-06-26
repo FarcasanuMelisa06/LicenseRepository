@@ -11,7 +11,7 @@ enum AppEndpoint {
     case login(username: String, password: String)
     case register(username: String, password: String)
     case courses
-    case chapters
+    case chapters(id: Int)
     case chapter(id: Int)
 }
 
@@ -25,8 +25,8 @@ extension AppEndpoint: Endpoint {
             return "/api/register"
         case .courses:
             return "/api/courses/\(languagePath)"
-        case .chapters:
-            return "/api/chapters/\(languagePath)"
+        case .chapters(let id):
+            return "/api/chapters/\(id)/chapters/\(languagePath)"
         case .chapter(let id):
             return "/api/chapters/\(id)/\(languagePath)"
         }
