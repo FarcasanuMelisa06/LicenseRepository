@@ -33,12 +33,6 @@ class ContentChaptersViewController: UIViewController, ManagerInjector{
         self.setupHideKeyboardOnTap()
     }
     
-    //trimite utilizatorul la partea de setari
-    @IBAction func search(_ sender: Any) {
-        performSegue(withIdentifier: "goToSeachSeque", sender: nil)
-    }
-    
-    
     @IBAction func audio(_ sender: Any) {
         
         let utterance = AVSpeechUtterance(string: contentAudio)

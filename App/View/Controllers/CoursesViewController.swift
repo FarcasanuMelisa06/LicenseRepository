@@ -12,20 +12,24 @@ class CoursesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var courses: [Course] = []
+    var filterCourses: [Course] = []
+    
+    @IBOutlet weak var coursesSearch: UISearchBar!
+    
     
     //trimite utilizatorul la partea de setari
     @IBAction func settings(_ sender: Any) {
         performSegue(withIdentifier: "goToSettingsSeque", sender: nil)
     }
     
-    @IBAction func search(_ sender: Any) {
-        performSegue(withIdentifier: "goToSearchSeque", sender: nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCourses()
+       
+        coursesSearch.delegate = self
+        
         self.setupHideKeyboardOnTap()
+   
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,6 +52,7 @@ class CoursesViewController: UIViewController {
             case .success(let response):
                 print("Cursurile au fost aduse cu succes \(response)")
                 courses = response
+                filterCourses = response
                 tableView.reloadData()
             case .failure(let error):
                 print("Eroare \(error)")
@@ -56,7 +61,7 @@ class CoursesViewController: UIViewController {
     }
 }
 
-extension CoursesViewController: UITableViewDelegate, UITableViewDataSource {
+extension CoursesViewController: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     //returneaza numarul de randuri din vectorul "courses"
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return courses.count
@@ -73,6 +78,25 @@ extension CoursesViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText != "" {
+                // se filtreaza vectorul courses in functie de searchText
+            let filteredCourses = courses.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+                
+                // se actualizeaza vectorul courses cu noile rezultate filtrate
+                courses = filteredCourses
+                
+                // se reincarca tableView cu noile rezultate
+                tableView.reloadData()
+            } else {
+                // Dacă searchBar-ul este gol, se afiseaza toate cursurile
+                courses = filterCourses
+                
+                // se reincarca tableView cu toate cursurile
+                tableView.reloadData()
+            }
     }
     
     //folosita in momentul in care utilizatorul selecteaza un curs

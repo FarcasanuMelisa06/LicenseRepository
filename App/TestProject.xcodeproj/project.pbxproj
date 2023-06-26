@@ -45,8 +45,6 @@
 		83BCF35429C3454B00F3AF01 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BCF35329C3454B00F3AF01 /* CourseCell.swift */; };
 		83C36AF329E488BA00DB312D /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C36AF229E488BA00DB312D /* AppManager.swift */; };
 		83C5D18529D200F70097E56F /* ContentChapters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83C5D18429D200F70097E56F /* ContentChapters.storyboard */; };
-		83E164632A121EF000E581D4 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E164622A121EEF00E581D4 /* SearchController.swift */; };
-		83E164652A121F2900E581D4 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83E164642A121F2900E581D4 /* Search.storyboard */; };
 		B194773284F2D10204A298FA /* Pods_TestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A839B6BBB041FC3D5009A565 /* Pods_TestProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,8 +108,6 @@
 		83BCF35329C3454B00F3AF01 /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 		83C36AF229E488BA00DB312D /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		83C5D18429D200F70097E56F /* ContentChapters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContentChapters.storyboard; sourceTree = "<group>"; };
-		83E164622A121EEF00E581D4 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
-		83E164642A121F2900E581D4 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		8DEF54A03645C07DDF77244B /* Pods-TestProject-TestProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProject-TestProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-TestProject-TestProjectUITests/Pods-TestProject-TestProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A1FB0175AC6A4C53168CBDC9 /* Pods-TestProject-TestProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProject-TestProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-TestProject-TestProjectUITests/Pods-TestProject-TestProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A839B6BBB041FC3D5009A565 /* Pods_TestProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -235,7 +231,6 @@
 				83C5D18429D200F70097E56F /* ContentChapters.storyboard */,
 				8381983A29DE990E00C5F8B2 /* Settings.storyboard */,
 				835BAD1329F98C44006BC18A /* Register.storyboard */,
-				83E164642A121F2900E581D4 /* Search.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -307,7 +302,6 @@
 				837FAFD229CF32AF00251400 /* ContentChaptersViewController.swift */,
 				8381983C29DE993A00C5F8B2 /* SettingsViewController.swift */,
 				835BAD1529F98E0B006BC18A /* RegisterController.swift */,
-				83E164622A121EEF00E581D4 /* SearchController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -460,7 +454,6 @@
 				838622CA29BB2D3700D7895B /* Assets.xcassets in Resources */,
 				83C5D18529D200F70097E56F /* ContentChapters.storyboard in Resources */,
 				8396F1A529C5F3EE004AA93A /* Chapters.storyboard in Resources */,
-				83E164652A121F2900E581D4 /* Search.storyboard in Resources */,
 				838622C829BB2D3500D7895B /* Main.storyboard in Resources */,
 				838622F229BB2ED200D7895B /* Courses.storyboard in Resources */,
 				8381983B29DE990E00C5F8B2 /* Settings.storyboard in Resources */,
@@ -608,7 +601,6 @@
 				83BCF34229C22EBA00F3AF01 /* RequestError.swift in Sources */,
 				838DA9D229D35BAC0056AD72 /* ContentChapterCell.swift in Sources */,
 				83BCF33829C229BF00F3AF01 /* User.swift in Sources */,
-				83E164632A121EF000E581D4 /* SearchController.swift in Sources */,
 				83BCF34629C2323D00F3AF01 /* AppEndpoint.swift in Sources */,
 				83BCF35429C3454B00F3AF01 /* CourseCell.swift in Sources */,
 				837FAFD329CF32AF00251400 /* ContentChaptersViewController.swift in Sources */,

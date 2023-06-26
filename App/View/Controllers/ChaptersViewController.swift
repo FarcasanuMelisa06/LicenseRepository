@@ -12,6 +12,9 @@ class ChaptersViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var chapters: [Chapter] = []
+    var filterChapters: [Chapter] = []
+    
+    @IBOutlet weak var chaptersSearch: UISearchBar!
     
     var courseId: Int?
     
@@ -19,15 +22,16 @@ class ChaptersViewController: UIViewController {
     @IBAction func settings(_ sender: Any) {
         performSegue(withIdentifier: "goToSettingsSeque", sender: nil)
     }
-    @IBAction func search(_ sender: Any) {
-        performSegue(withIdentifier: "goToSearchSeque", sender: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadChapters()
+        chaptersSearch.delegate = self
+        
         //functie pentru ascunderea tastaturii
         self.setupHideKeyboardOnTap()
+        
+       
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -52,6 +56,7 @@ class ChaptersViewController: UIViewController {
                 case .success(let response):
                     print("Capitolele au fost aduse cu succes \(response)")
                     chapters = response.sorted(by: { $0.id < $1.id })
+                    filterChapters = response
                     tableView.reloadData()
                 case .failure(let error):
                     print("Eroare \(error)")
@@ -61,7 +66,7 @@ class ChaptersViewController: UIViewController {
     }
 }
 
-extension ChaptersViewController: UITableViewDelegate, UITableViewDataSource {
+extension ChaptersViewController: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     //returneaza numarul de randuri din vectorul "courses"
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,6 +87,29 @@ extension ChaptersViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return UITableViewCell()
     }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText != "" {
+               // Filtrați vectorul chapters în funcție de searchText și titlul capitolului
+               let filteredChapters = filterChapters.filter { $0.initialdescription.lowercased().contains(searchText.lowercased()) }
+
+               // Actualizați vectorul de rezultate filtrate
+               chapters = filteredChapters
+
+               // Reîncărcați tableView cu noile rezultate
+               tableView.reloadData()
+
+        
+           } else {
+               // Dacă searchBar-ul este gol, afișați toate capitolele
+               chapters = filterChapters
+
+               // Reîncărcați tableView cu toate capitolele
+               tableView.reloadData()
+
+           }
+    }
+    
     
     //returneaza dimensiunea pentru tableView
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

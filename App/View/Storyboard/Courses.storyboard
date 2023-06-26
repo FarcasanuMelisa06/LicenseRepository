@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="L4q-CQ-qRO">
-                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="714"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexColor" name="Coffee"/>
                                 <color key="sectionIndexBackgroundColor" name="LemonChiffon"/>
@@ -61,53 +61,45 @@
                                     <outlet property="delegate" destination="560-uO-Vg6" id="F8T-xq-kqy"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" placeholder="Search courses" translatesAutoresizingMaskIntoConstraints="NO" id="IiV-ug-94N">
+                                <rect key="frame" x="0.0" y="92" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="560-uO-Vg6" id="COC-Aa-m5Y"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3Wt-ab-35B"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3Wt-ab-35B" firstAttribute="bottom" secondItem="L4q-CQ-qRO" secondAttribute="bottom" id="1E1-yW-JV3"/>
+                            <constraint firstItem="L4q-CQ-qRO" firstAttribute="top" secondItem="IiV-ug-94N" secondAttribute="bottom" id="2AT-py-Sde"/>
                             <constraint firstItem="L4q-CQ-qRO" firstAttribute="leading" secondItem="3Wt-ab-35B" secondAttribute="leading" id="85n-H5-r6C"/>
-                            <constraint firstItem="L4q-CQ-qRO" firstAttribute="top" secondItem="3Wt-ab-35B" secondAttribute="top" id="VIj-nY-Rh0"/>
+                            <constraint firstItem="IiV-ug-94N" firstAttribute="leading" secondItem="3Wt-ab-35B" secondAttribute="leading" id="K62-fE-TjE"/>
+                            <constraint firstItem="IiV-ug-94N" firstAttribute="trailing" secondItem="3Wt-ab-35B" secondAttribute="trailing" id="WBc-Ql-28I"/>
+                            <constraint firstItem="IiV-ug-94N" firstAttribute="top" secondItem="3Wt-ab-35B" secondAttribute="top" id="qZh-s9-3VV"/>
                             <constraint firstItem="3Wt-ab-35B" firstAttribute="trailing" secondItem="L4q-CQ-qRO" secondAttribute="trailing" id="vEn-Mv-Bzn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Courses" id="XgD-iy-9XX">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Item" image="gearshape.fill" catalog="system" id="BU8-xF-31K">
-                                <color key="tintColor" name="PinkColor"/>
-                                <connections>
-                                    <action selector="settings:" destination="560-uO-Vg6" id="TGn-9Z-EFm"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Item" image="magnifyingglass" catalog="system" id="0zH-YT-XdL">
-                                <color key="tintColor" name="PinkColor"/>
-                                <connections>
-                                    <action selector="search:" destination="560-uO-Vg6" id="tfR-zM-OSr"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape.fill" catalog="system" id="BU8-xF-31K">
+                            <color key="tintColor" name="PinkColor"/>
+                            <connections>
+                                <action selector="settings:" destination="560-uO-Vg6" id="TGn-9Z-EFm"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="coursesSearch" destination="IiV-ug-94N" id="bPz-Yo-rNZ"/>
                         <outlet property="tableView" destination="L4q-CQ-qRO" id="hbR-JK-qqZ"/>
                         <segue destination="uRz-en-Qt6" kind="show" identifier="goToChaptersSegue" id="hDT-0T-tS7"/>
                         <segue destination="0V8-Y7-f7H" kind="show" identifier="goToSettingsSeque" id="KHL-m0-P6T"/>
-                        <segue destination="7S7-yD-LA5" kind="show" identifier="goToSearchSeque" id="DFy-iB-LZE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tqT-cO-Pwe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="568.1159420289855" y="-182.14285714285714"/>
-        </scene>
-        <!--Search-->
-        <scene sceneID="f7N-85-2jS">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Search" id="7S7-yD-LA5" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="FHn-yx-6F1"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="M49-f9-dDC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1195" y="-296"/>
+            <point key="canvasLocation" x="566.66666666666674" y="-182.14285714285714"/>
         </scene>
         <!--Settings-->
         <scene sceneID="5iY-QL-mHG">
@@ -150,7 +142,6 @@
     </scenes>
     <resources>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <namedColor name="Coffee">
             <color red="0.37599998712539673" green="0.25099998712539673" blue="0.23899999260902405" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
